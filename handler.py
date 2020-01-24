@@ -5,7 +5,6 @@ import datetime
 import xbmc
 import xbmcaddon
 import xbmcgui
-from random import randint
 import json
 import requests
 import os
@@ -44,6 +43,14 @@ def notifyLog(message, level=xbmc.LOGDEBUG):
 def notifyOSD(header, message, icon=IconDefault, time=5000):
     OSD.notification(header, message, icon, time)
 
+def sanitize(dict):
+    for key, val in dict.items():
+        try:
+            dict.update({key: val.replace('&', '&amp;')})
+        except AttributeError:
+            continue
+    return dict
+
 
 class RequestAnnouncer(object):
 
@@ -66,11 +73,11 @@ class RequestAnnouncer(object):
         utime = date2timeStamp(self.announcement['date'])
 
         if not utime or (utime - int(time.time()) < TIMEDELAY):
-            notifyOSD(loc(30000), loc(30022))
+            notifyOSD(loc(30000), loc(30022), icon=IconAlert)
             return False
 
         self.announcement.update({'id': self.id, 'nickname': self.nickname, 'utime': utime})
-        js = json.dumps(self.announcement, sort_keys=True, indent=4)
+        js = json.dumps(sanitize(self.announcement), sort_keys=True, indent=4)
         headers = {'content-type': 'application/json'}
         try:
             req = requests.post(self.server, json=js, headers=headers)
@@ -79,7 +86,7 @@ class RequestAnnouncer(object):
             print(req.text)
             self.status = req.status_code
             if self.status == 403:
-                notifyOSD(loc(30000), loc(30023))
+                notifyOSD(loc(30000), loc(30023), icon=IconAlert)
                 return False
 
             elif self.status == 200:
@@ -87,18 +94,18 @@ class RequestAnnouncer(object):
                 response = js.get('result', 'failure')
 
                 if response == 'ok':
-                    notifyOSD(loc(30000), loc(30020))
+                    notifyOSD(loc(30000), loc(30020), icon=IconOk)
                     return True
 
-                notifyOSD(loc(30000), loc(30021))
+                notifyOSD(loc(30000), loc(30021), icon=IconAlert)
                 return False
 
         except requests.HTTPError as e:
             notifyLog(e, xbmc.LOGERROR)
-            notifyOSD(loc(30000), loc(30021))
+            notifyOSD(loc(30000), loc(30021), icon=IconAlert)
 
         except ValueError as e:
             notifyLog(e, xbmc.LOGERROR)
-            notifyOSD(loc(30000), loc(30024))
+            notifyOSD(loc(30000), loc(30024), icon=IconAlert)
 
         return False
