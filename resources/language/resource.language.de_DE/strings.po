@@ -1,0 +1,67 @@
+# XBMC Media Center language file
+# Addon Name: KN FreeTV Announcer
+# Addon id: script.knftv.announcer
+# Addon version: 0.0.1
+# Addon Provider: Birger Jesch
+
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2016-09-02 05:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgctxt "Addon Disclaimer"
+msgid "Use at your own risk."
+msgstr "Benutzung auf eigene Gefahr"
+
+msgctxt "#30000"
+msgid "KN Announcement Service"
+msgstr "KN Announcement Service"
+
+msgctxt "#30010"
+msgid "KN Announcement Server"
+msgstr "KN Announcement Server"
+
+msgctxt "#30011"
+msgid "Kodinerds Nickname"
+msgstr "Kodinerds Nickname"
+
+msgctxt "#30012"
+msgid "Kodinerds Announce ID (do not edit)"
+msgstr "Kodinerds Announce ID (bitte nicht editieren)"
+
+msgctxt "#30020"
+msgid "Request was transferred successfully"
+msgstr "Anfrage wurde erfolgreich übertragen"
+
+msgctxt "#30021"
+msgid "Error during Transmission of the Request"
+msgstr "Fehler beim Übertragen der Anfrage"
+
+msgctxt "#30022"
+msgid "Time until start of Broadcast too short"
+msgstr "Zeit bis zum Sendestart zu kurz"
+
+msgctxt "#30023"
+msgid "No Permissions to access the Server"
+msgstr "Keine Zugriffsberechtigung auf den Server"
+
+msgctxt "#30024"
+msgid "Error during Data Transmission"
+msgstr "Fehler bei der Datenübertragung"
+
+msgctxt "#30040"
+msgid "Announce to KN FTV"
+msgstr "Auf KN FTV anzeigen"
+
+msgctxt "#30041"
+msgid "Delete my Announcements"
+msgstr "Meine Announcements löschen"

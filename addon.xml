@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<addon id="script.knftv.announcer" name="KN FreeTV Announcer" provider-name="Birger Jesch" version="0.0.1">
+    <requires>
+        <import addon="xbmc.addon" version="17.0.0"/>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="xbmc.json" version="7.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="handler.py" />
+    <extension point="kodi.context.item" library="addevent.py">
+            <menu id="kodi.core.main">
+                <item library="addevent.py">
+                    <label>30040</label>
+                    <visible>System.HasAddon(script.knftv.announcer) + Window.IsVisible(tvguide)</visible>
+                </item>
+                <item library="delevent.py">
+                    <label>30041</label>
+                    <visible>System.HasAddon(script.knftv.announcer) + Window.IsVisible(tvguide)</visible>
+                </item>
+            </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Announcements of Events on Free TV from the German Kodinerds Community</summary>
+        <summary lang="de_DE">TV-Tipps im Free TV von den Mitgliedern der Kodinerds Community</summary>
+        <description lang="en_GB">TV tips from members of the German Kodi community "kodinerds.tv" are always a guarantee for high quality entertainment and top quality movies that are broadcasted on German Free TV.</description>
+        <description lang="de_DE">TV Tipps von Mitgliedern der deutschen Kodi Community "kodinerds.tv" sind immer ein Garant für hochwertige Unterhaltung und Filme in bester Qualität, die im deutschen Free TV gesendet werden.</description>
+        <disclaimer lang="en_GB">Use at your own risk. Post suggestions, improvements or bug reports directly to the Community.</disclaimer>
+        <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Anregungen, Verbesserungen oder Bugs bitte direkt in die Community posten.</disclaimer>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <website></website>
+        <source></source>
+        <news>
+        </news>
+        <assets>
+            <icon></icon>
+            <fanart></fanart>
+            <screenshot></screenshot>
+        </assets>
+        <email>birger.jesch@gmail.com</email>
+    </extension>
+</addon>
