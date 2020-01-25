@@ -40,9 +40,9 @@ if __name__ ==  '__main__':
                     message.announcement = args
                     result = message.sendBroadcast()
 
-                    if not result:
-                        handler.notifyLog('Broadcast could\'nt deleted')
-                        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconAlert)
-                    else:
-                        handler.notifyLog('Broadcast deleted')
-                        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconOk)
+    if not result:
+        handler.notifyLog('Broadcast could\'nt deleted')
+        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconAlert)
+    else:
+        handler.notifyLog('Broadcast deleted')
+        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconOk)
