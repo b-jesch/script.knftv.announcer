@@ -59,9 +59,14 @@ msgid "Error during Data Transmission"
 msgstr "Fehler bei der Datenübertragung"
 
 msgctxt "#30040"
-msgid "Announce to KN FTV"
-msgstr "Auf KN FTV anzeigen"
+msgid "Announce to KNFTV"
+msgstr "Auf KNFTV anzeigen"
 
 msgctxt "#30041"
-msgid "Delete my Announcements"
-msgstr "Meine Announcements löschen"
+msgid "Delete Announce on KNFTV"
+msgstr "Tipps auf KNFTV löschen"
+
+msgctxt "#30042"
+msgid "Delete my Announcement on KNFTV"
+msgstr "Meinen Tipp auf KNFTV löschen"
+

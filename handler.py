@@ -24,6 +24,7 @@ JSON_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 UTC_OFFSET = int(round((datetime.datetime.now() - datetime.datetime.utcnow()).seconds, -1))
 
 OSD = xbmcgui.Dialog()
+LI = xbmcgui.ListItem()
 
 def date2timeStamp(date, dFormat=None, utc=False):
     # Kodi bug: returns '%H%H' or '%I%I'
@@ -70,42 +71,48 @@ class RequestAnnouncer(object):
 
         # check broadcast
 
-        utime = date2timeStamp(self.announcement['date'])
+        if self.announcement['command'] == 'add':
 
-        if not utime or (utime - int(time.time()) < TIMEDELAY):
-            notifyOSD(loc(30000), loc(30022), icon=IconAlert)
-            return False
+            utime = date2timeStamp(self.announcement['broadcast']['date'])
+            self.announcement.update({'utime': utime})
 
-        self.announcement.update({'id': self.id, 'nickname': self.nickname, 'utime': utime})
-        js = json.dumps(sanitize(self.announcement), sort_keys=True, indent=4)
+            if (not utime or (utime - int(time.time()) < TIMEDELAY)):
+                self.status = loc(30022)
+                return False
+
+        self.announcement.update({'id': self.id, 'nickname': self.nickname})
+        js = json.dumps(self.announcement, sort_keys=True, indent=4)
         headers = {'content-type': 'application/json'}
         try:
-            req = requests.post(self.server, json=js, headers=headers)
+            req = requests.post(self.server, json=js, headers=headers, timeout=5)
             req.raise_for_status()
 
-            print(req.text)
-            self.status = req.status_code
-            if self.status == 403:
-                notifyOSD(loc(30000), loc(30023), icon=IconAlert)
+            if req.status_code == 403:
+                self.status = loc(30023)
                 return False
 
-            elif self.status == 200:
+            elif req.status_code == 200:
                 js = json.loads(req.text)
                 response = js.get('result', 'failure')
+                print response
 
                 if response == 'ok':
-                    notifyOSD(loc(30000), loc(30020), icon=IconOk)
-                    return True
+                    self.status = loc(30020)
+                    return js
 
-                notifyOSD(loc(30000), loc(30021), icon=IconAlert)
+                self.status = loc(30021)
                 return False
+
+        except requests.ConnectTimeout as e:
+            notifyLog(e, xbmc.LOGERROR)
+            self.status = loc(30024)
 
         except requests.HTTPError as e:
             notifyLog(e, xbmc.LOGERROR)
-            notifyOSD(loc(30000), loc(30021), icon=IconAlert)
+            self.status = loc(30021)
 
         except ValueError as e:
             notifyLog(e, xbmc.LOGERROR)
-            notifyOSD(loc(30000), loc(30024), icon=IconAlert)
+            self.status = loc(30024)
 
         return False

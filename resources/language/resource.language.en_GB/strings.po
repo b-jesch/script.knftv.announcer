@@ -55,9 +55,13 @@ msgid "No permissions to access the Server"
 msgstr "Keine Zugriffsberechtigung auf den Server"
 
 msgctxt "#30040"
-msgid "Announce to KN FTV"
+msgid "Announce to KNFTV"
 msgstr ""
 
 msgctxt "#30041"
-msgid "Delete my Announcements"
+msgid "Delete Announce on KNFTV"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Delete my Announcement on KNFTV"
 msgstr ""
