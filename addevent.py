@@ -17,9 +17,9 @@ if __name__ ==  '__main__':
                       })
 
     args.update({'command': 'add', 'broadcast': handler.sanitize(broadcast)})
-    message = handler.RequestAnnouncer()
+    message = handler.RequestConnector()
     message.announcement = args
-    if not message.sendBroadcast():
+    if not message.sendRequest():
         handler.notifyLog('Broadcast could\'nt delivered')
         handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconAlert)
     else:

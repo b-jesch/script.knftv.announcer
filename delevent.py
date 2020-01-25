@@ -12,14 +12,15 @@ if __name__ ==  '__main__':
     # fetch own announcements
 
     args = dict()
+    broadcast = dict()
     args.update({'command': 'fetch'})
-    message = handler.RequestAnnouncer()
+    message = handler.RequestConnector()
     message.announcement = args
-    result = message.sendBroadcast()
+    result = message.sendRequest()
 
     if result:
         fetched = result['items']
-        print len(fetched)
+        print(len(fetched))
         if len(fetched) > 0:
 
             menu = list()
@@ -32,13 +33,10 @@ if __name__ ==  '__main__':
 
                 _idx = xbmcgui.Dialog().select(handler.loc(30042), menu, useDetails=True)
                 if _idx > -1:
-                    broadcast = dict()
                     broadcast.update({'file': menu[_idx].getProperty('file')})
-
                     args.update({'command': 'del', 'broadcast': handler.sanitize(broadcast)})
-                    message = handler.RequestAnnouncer()
                     message.announcement = args
-                    result = message.sendBroadcast()
+                    result = message.sendRequest()
 
     if not result:
         handler.notifyLog('Broadcast could\'nt deleted')

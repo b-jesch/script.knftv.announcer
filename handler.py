@@ -8,6 +8,7 @@ import xbmcgui
 import json
 import requests
 import os
+import sys
 
 addon = xbmcaddon.Addon()
 addonid = xbmcaddon.Addon().getAddonInfo('id')
@@ -53,12 +54,17 @@ def sanitize(dict):
     return dict
 
 
-class RequestAnnouncer(object):
+class RequestConnector(object):
 
     def __init__(self):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
-        self.id = unicode(addon.getSetting('id'))
+        if sys.version < 3:
+            self.id = unicode(addon.getSetting('id'))
+        else:
+            import codecs
+            self.id = codecs.unicode_escape_decode(str(addon.getSetting('id'))[0])
+
         self.status = 'ok'
 
         if not self.id.isnumeric() or int(self.id) == 0:
@@ -67,7 +73,7 @@ class RequestAnnouncer(object):
 
         self.announcement = dict()
 
-    def sendBroadcast(self):
+    def sendRequest(self):
 
         # check broadcast
 
@@ -94,7 +100,6 @@ class RequestAnnouncer(object):
             elif req.status_code == 200:
                 js = json.loads(req.text)
                 response = js.get('result', 'failure')
-                print response
 
                 if response == 'ok':
                     self.status = loc(30020)
