@@ -43,6 +43,7 @@ def notifyLog(message, level=xbmc.LOGDEBUG):
     xbmc.log('[%s %s] %s' % (addonid, version, message), level)
 
 def notifyOSD(header, message, icon=IconDefault, time=5000):
+    if message == None: return
     OSD.notification(header, message, icon, time)
 
 def sanitize(dict):
@@ -59,12 +60,7 @@ class RequestConnector(object):
     def __init__(self):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
-        if sys.version < 3:
-            self.id = unicode(addon.getSetting('id'))
-        else:
-            import codecs
-            self.id = codecs.unicode_escape_decode(str(addon.getSetting('id'))[0])
-
+        self.id = unicode(addon.getSetting('id'))
         self.status = 'ok'
 
         if not self.id.isnumeric() or int(self.id) == 0:
@@ -91,6 +87,7 @@ class RequestConnector(object):
         headers = {'content-type': 'application/json'}
         try:
             req = requests.post(self.server, json=js, headers=headers, timeout=5)
+            notifyLog(req.text)
             req.raise_for_status()
 
             if req.status_code == 403:

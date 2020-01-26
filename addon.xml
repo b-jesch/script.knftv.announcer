@@ -6,7 +6,7 @@
         <import addon="xbmc.json" version="7.0.0"/>
         <import addon="script.module.requests" version="2.22.0"/>
     </requires>
-    <extension point="xbmc.python.script" library="handler.py" />
+    <extension point="xbmc.python.script" library="delevent.py" />
     <extension point="kodi.context.item" library="addevent.py">
             <menu id="kodi.core.main">
                 <item library="addevent.py">

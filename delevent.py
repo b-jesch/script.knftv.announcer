@@ -20,7 +20,6 @@ if __name__ ==  '__main__':
 
     if result:
         fetched = result['items']
-        print(len(fetched))
         if len(fetched) > 0:
 
             menu = list()
@@ -31,12 +30,18 @@ if __name__ ==  '__main__':
                 liz.setProperty('file', item['File'])
                 menu.append(liz)
 
-                _idx = xbmcgui.Dialog().select(handler.loc(30042), menu, useDetails=True)
-                if _idx > -1:
-                    broadcast.update({'file': menu[_idx].getProperty('file')})
-                    args.update({'command': 'del', 'broadcast': handler.sanitize(broadcast)})
-                    message.announcement = args
-                    result = message.sendRequest()
+            _idx = xbmcgui.Dialog().select(handler.loc(30042), menu, useDetails=True)
+            if _idx > -1:
+                broadcast.update({'file': menu[_idx].getProperty('file')})
+                args.update({'command': 'del', 'broadcast': handler.sanitize(broadcast)})
+                message.announcement = args
+                result = message.sendRequest()
+            else:
+                result = False
+                message.status = None
+        else:
+            result = False
+            message.status = handler.loc(30025)
 
     if not result:
         handler.notifyLog('Broadcast could\'nt deleted')

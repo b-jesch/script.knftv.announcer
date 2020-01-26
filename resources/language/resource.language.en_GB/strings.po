@@ -51,7 +51,7 @@ msgid "Time until start of Broadcast too short"
 msgstr ""
 
 msgctxt "#30023"
-msgid "No permissions to access the Server"
+msgid "No Permissions to access the Server"
 msgstr "Keine Zugriffsberechtigung auf den Server"
 
 msgctxt "#30040"

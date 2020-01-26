@@ -58,15 +58,19 @@ msgctxt "#30024"
 msgid "Error during Data Transmission"
 msgstr "Fehler bei der Datenübertragung"
 
+msgctxt "#30025"
+msgid "No Entries available"
+msgstr "Keine Einträge vorhanden"
+
 msgctxt "#30040"
 msgid "Announce to KNFTV"
 msgstr "Auf KNFTV anzeigen"
 
 msgctxt "#30041"
-msgid "Delete Announce on KNFTV"
+msgid "Delete Announces on KNFTV"
 msgstr "Tipps auf KNFTV löschen"
 
 msgctxt "#30042"
-msgid "Delete my Announcement on KNFTV"
-msgstr "Meinen Tipp auf KNFTV löschen"
+msgid "Delete my Announcements on KNFTV"
+msgstr "Meine Tipps auf KNFTV löschen"
 
