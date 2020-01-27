@@ -26,6 +26,10 @@ msgctxt "#30000"
 msgid "KN Announcement Service"
 msgstr ""
 
+msgctxt "#30005"
+msgid "User Settings"
+msgstr ""
+
 msgctxt "#30010"
 msgid "KN Announcement Server"
 msgstr ""
@@ -59,9 +63,10 @@ msgid "Announce to KNFTV"
 msgstr ""
 
 msgctxt "#30041"
-msgid "Delete Announce on KNFTV"
+msgid "Delete Announces on KNFTV"
 msgstr ""
 
 msgctxt "#30042"
-msgid "Delete my Announcement on KNFTV"
+msgid "Delete my Announcements on KNFTV"
 msgstr ""
+

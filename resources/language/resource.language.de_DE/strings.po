@@ -26,6 +26,10 @@ msgctxt "#30000"
 msgid "KN Announcement Service"
 msgstr "KN Announcement Service"
 
+msgctxt "#30005"
+msgid "User Settings"
+msgstr "Nutzerdaten"
+
 msgctxt "#30010"
 msgid "KN Announcement Server"
 msgstr "KN Announcement Server"
