@@ -33,8 +33,8 @@
         <news>
         </news>
         <assets>
-            <icon></icon>
-            <fanart></fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
             <screenshot></screenshot>
         </assets>
         <email>birger.jesch@gmail.com</email>
