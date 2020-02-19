@@ -54,7 +54,7 @@ msgctxt "#30042"
 msgid "Delete my Announcements on KNFTV"
 msgstr ""
 
-# Status and error messages, must below 1000
+# Status and error messages
 
 msgctxt "#30100"
 msgid "Icon Upload successful"
