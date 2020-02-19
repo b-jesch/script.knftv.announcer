@@ -42,22 +42,6 @@ msgctxt "#30012"
 msgid "KN Announce ID (do not edit)"
 msgstr ""
 
-msgctxt "#30020"
-msgid "Request was transferred successfully"
-msgstr ""
-
-msgctxt "#30021"
-msgid "Error during Transmission of the Request"
-msgstr ""
-
-msgctxt "#30022"
-msgid "Time until start of Broadcast too short"
-msgstr ""
-
-msgctxt "#30023"
-msgid "No Permissions to access the Server"
-msgstr "Keine Zugriffsberechtigung auf den Server"
-
 msgctxt "#30040"
 msgid "Announce to KNFTV"
 msgstr ""
@@ -70,3 +54,68 @@ msgctxt "#30042"
 msgid "Delete my Announcements on KNFTV"
 msgstr ""
 
+# Status and error messages, must below 1000
+
+msgctxt "#30100"
+msgid "Icon Upload successful"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Upload Error, couldn't move to Cache"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Upload Error, couldn't upload"
+msgstr ""
+
+msgctxt "#30110"
+msgid "Announcement added"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Announcement voted"
+msgstr ""
+
+msgctxt "#30112"
+msgid "Announcement already created or voted"
+msgstr ""
+
+msgctxt "#30115"
+msgid "Announcements fetched"
+msgstr ""
+
+msgctxt "#30116"
+msgid "No own Announcements fetched"
+msgstr ""
+
+msgctxt "#30120"
+msgid "Announcement deleted"
+msgstr ""
+
+msgctxt "#30121"
+msgid "Announcement File not found"
+msgstr ""
+
+msgctxt "#30130"
+msgid "unknown Command"
+msgstr ""
+
+msgctxt "#30140"
+msgid "Announcement Server unreachable"
+msgstr ""
+
+msgctxt "#30141"
+msgid "Service not available"
+msgstr ""
+
+msgctxt "#30142"
+msgid "Access forbidden"
+msgstr ""
+
+msgctxt "#30143"
+msgid "Communication Error"
+msgstr ""
+
+msgctxt "#30150"
+msgid "unknown Result Code"
+msgstr ""

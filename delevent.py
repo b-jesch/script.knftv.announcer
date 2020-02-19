@@ -14,11 +14,10 @@ if __name__ ==  '__main__':
     args = dict()
     broadcast = dict()
     args.update({'command': 'fetch'})
-    message = handler.RequestConnector()
-    message.announcement = args
-    result = message.sendRequest()
+    bc = handler.cRequestConnector()
+    result = bc.transmitAnnouncement(args)
 
-    if result:
+    if result is not None:
         fetched = result['items']
         if len(fetched) > 0:
 
@@ -30,22 +29,19 @@ if __name__ ==  '__main__':
                 liz.setProperty('file', item['File'])
                 menu.append(liz)
 
-            _idx = xbmcgui.Dialog().select(handler.loc(30042), menu, useDetails=True)
+            _idx = xbmcgui.Dialog().select(30042, menu, useDetails=True)
             if _idx > -1:
                 broadcast.update({'file': menu[_idx].getProperty('file')})
                 args.update({'command': 'del', 'broadcast': handler.sanitize(broadcast)})
-                message.announcement = args
-                result = message.sendRequest()
+                result = bc.transmitAnnouncement(args)
             else:
-                result = False
-                message.status = None
+                exit(0)
         else:
-            result = False
-            message.status = handler.loc(30025)
+            result = None
 
-    if not result:
+    if result is None:
         handler.notifyLog('Broadcast could\'nt deleted')
-        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconAlert)
+        handler.notifyOSD(30000, bc.status, icon=handler.IconAlert)
     else:
         handler.notifyLog('Broadcast deleted')
-        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconOk)
+        handler.notifyOSD(30000, bc.status, icon=handler.IconOk)

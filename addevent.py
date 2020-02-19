@@ -16,12 +16,24 @@ if __name__ ==  '__main__':
                       'plot': xbmc.getInfoLabel('ListItem.Plot'),
                       })
 
+    # check for additional events (pvr connection required)
+
+    pvr = handler.cPvrConnector()
+    pvr.channelName2channeldId(broadcast['channelname'])
+    if pvr.channel_id is not None:
+        pvr.getBroadcasts(broadcast['epgeventtitle'], handler.date2timeStamp(broadcast['date']))
+        if len(pvr.broadcasts) > 0: broadcast.update({'broadcasts': pvr.broadcasts})
+
+    # check online availability of images and move to server cache
+
+    bc = handler.cRequestConnector()
+
+    broadcast.update({'icon': bc.transmitFile(broadcast['icon'])})
     args.update({'command': 'add', 'broadcast': handler.sanitize(broadcast)})
-    message = handler.RequestConnector()
-    message.announcement = args
-    if not message.sendRequest():
+
+    if bc.transmitAnnouncement(args) is None:
         handler.notifyLog('Broadcast could\'nt delivered')
-        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconAlert)
+        handler.notifyOSD(30000, bc.status, icon=handler.IconAlert)
     else:
         handler.notifyLog('Broadcast delivered')
-        handler.notifyOSD(handler.loc(30000), message.status, icon=handler.IconOk)
+        handler.notifyOSD(30000, bc.status, icon=handler.IconOk)

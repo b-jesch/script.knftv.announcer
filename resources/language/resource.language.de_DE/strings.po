@@ -42,30 +42,6 @@ msgctxt "#30012"
 msgid "Kodinerds Announce ID (do not edit)"
 msgstr "Kodinerds Announce ID (bitte nicht editieren)"
 
-msgctxt "#30020"
-msgid "Request was transferred successfully"
-msgstr "Anfrage wurde erfolgreich übertragen"
-
-msgctxt "#30021"
-msgid "Error during Transmission of the Request"
-msgstr "Fehler beim Übertragen der Anfrage"
-
-msgctxt "#30022"
-msgid "Time until start of Broadcast too short"
-msgstr "Zeit bis zum Sendestart zu kurz"
-
-msgctxt "#30023"
-msgid "No Permissions to access the Server"
-msgstr "Keine Zugriffsberechtigung auf den Server"
-
-msgctxt "#30024"
-msgid "Error during Data Transmission"
-msgstr "Fehler bei der Datenübertragung"
-
-msgctxt "#30025"
-msgid "No Entries available"
-msgstr "Keine Einträge vorhanden"
-
 msgctxt "#30040"
 msgid "Announce to KNFTV"
 msgstr "Auf KNFTV anzeigen"
