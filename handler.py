@@ -145,9 +145,10 @@ class cRequestConnector(object):
 
         if fromURL is None: return None
         try:
+            notifyLog('Transmit icon to server...')
             req_f = requests.get(fromURL, stream=True)
             req_f.raise_for_status()
-            notifyLog('Transmit icon to server...')
+
             result = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
             if result is not None:
                 return result.get('items', None)

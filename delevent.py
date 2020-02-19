@@ -29,10 +29,11 @@ if __name__ ==  '__main__':
                 liz.setProperty('file', item['File'])
                 menu.append(liz)
 
-            _idx = xbmcgui.Dialog().select(30042, menu, useDetails=True)
+            _idx = xbmcgui.Dialog().select(handler.loc(30042), menu, useDetails=True)
             if _idx > -1:
                 broadcast.update({'file': menu[_idx].getProperty('file')})
                 args.update({'command': 'del', 'broadcast': handler.sanitize(broadcast)})
+                print args
                 result = bc.transmitAnnouncement(args)
             else:
                 exit(0)
