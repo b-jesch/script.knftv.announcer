@@ -88,6 +88,14 @@ msgctxt "#30116"
 msgid "No own Announcements fetched"
 msgstr ""
 
+msgctxt "#30117"
+msgid "Time until Start of Broadcast too short"
+msgstr ""
+
+msgctxt "#30118"
+msgid "Broadcast Preview updated"
+msgstr ""
+
 msgctxt "#30120"
 msgid "Announcement deleted"
 msgstr ""
