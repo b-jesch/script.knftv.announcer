@@ -62,6 +62,7 @@ def notifyOSD(header, message, icon=IconDefault, time=5000):
 
 
 def sanitize(dict, exclude=None):
+
     if exclude is None: exclude = list()
     for key, val in dict.items():
         if len(exclude) > 0 and key in exclude: continue

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/script.knftv.announcer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/script.knftv.announcer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,7 @@
       <workItem from="1582197458400" duration="261000" />
       <workItem from="1582201614579" duration="1501000" />
       <workItem from="1582221753002" duration="289000" />
-      <workItem from="1582222283124" duration="6839000" />
+      <workItem from="1582222283124" duration="11163000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -123,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582117716983</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Calculation of star rating added">
+      <created>1582229642692</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582229642692</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,12 +138,21 @@
     <MESSAGE value="Improved message handling" />
     <MESSAGE value="german messages added" />
     <MESSAGE value="Messages updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messages updated" />
+    <MESSAGE value="Calculation of star rating added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calculation of star rating added" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="508" y="46" key="CommitChangelistDialog2" timestamp="1582229641609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="508" y="46" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582229641609" />
     <state x="352" y="77" key="SettingsEditor" timestamp="1582222044020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582222044020" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1582229666539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582229666539" />
   </component>
 </project>

@@ -33,13 +33,9 @@ if __name__ ==  '__main__':
     # determine ratings
 
     if broadcast['rating'] != '':
-        _bcr = float(broadcast['rating']) if int(broadcast['rating']) < 10 else float(int(broadcast['rating']) / 10.0)
-        (fs, hs) = divmod(round(_bcr), 2)
-        broadcast.update({'rating': (int(fs) * '&#x2605;') + (int(hs) * '&#x2BE8;') + ((5 - int(fs + hs)) * '&#x2606;')})
+        broadcast.update({'rating': float(broadcast['rating']) if int(broadcast['rating']) < 10 else float(int(broadcast['rating']) / 10.0)})
 
-        handler.notifyLog('numeric rating %s replaced with %s' % (_bcr, broadcast['rating']))
-        args.update({'command': 'add', 'broadcast': handler.sanitize(broadcast, exclude=['rating'])})
-
+    args.update({'command': 'add', 'broadcast': handler.sanitize(broadcast)})
     if bc.transmitAnnouncement(args) is None:
         handler.notifyLog('Broadcast could\'nt delivered')
         handler.notifyOSD(30000, bc.status, icon=handler.IconAlert)
