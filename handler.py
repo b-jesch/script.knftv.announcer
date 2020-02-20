@@ -61,8 +61,10 @@ def notifyOSD(header, message, icon=IconDefault, time=5000):
     OSD.notification(loc(header), loc(message), icon, time)
 
 
-def sanitize(dict):
+def sanitize(dict, exclude=None):
+    if exclude is None: exclude = list()
     for key, val in dict.items():
+        if len(exclude) > 0 and key in exclude: continue
         try:
             dict.update({key: val.replace('&', '&amp;')})
         except AttributeError:
