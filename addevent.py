@@ -13,7 +13,7 @@ if __name__ ==  '__main__':
                       'date': xbmc.getInfoLabel('ListItem.Date'), 'starttime': xbmc.getInfoLabel('ListItem.StartTime'),
                       'endtime': xbmc.getInfoLabel('ListItem.EndTime'), 'title': xbmc.getInfoLabel('ListItem.Title'),
                       'epgeventtitle': xbmc.getInfoLabel('ListItem.EpgEventTitle'), 'genre': xbmc.getInfoLabel('ListItem.Genre'),
-                      'plot': xbmc.getInfoLabel('ListItem.Plot'),
+                      'plot': xbmc.getInfoLabel('ListItem.Plot'),'rating': xbmc.getInfoLabel('ListItem.Rating'),
                       })
 
     # check for additional events (pvr connection required)
