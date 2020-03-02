@@ -57,7 +57,7 @@ msgstr ""
 # Status and error messages
 
 msgctxt "#30100"
-msgid "Icon Upload successful"
+msgid "Preview Upload successful"
 msgstr ""
 
 msgctxt "#30101"

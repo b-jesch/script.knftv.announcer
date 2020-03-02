@@ -57,7 +57,7 @@ msgstr "Meine Tipps auf KNFTV löschen"
 # Status and error messages
 
 msgctxt "#30100"
-msgid "Icon Upload successful"
+msgid "Preview Upload successful"
 msgstr "Vorschaubild erfolgreich hochgeladen"
 
 msgctxt "#30101"
@@ -94,7 +94,7 @@ msgstr "Zeit bis Sendungsbeginn zu kurz"
 
 msgctxt "#30118"
 msgid "Broadcast Preview updated"
-msgstr "Vorschaubild aktulisiert"
+msgstr "Vorschaubild aktualisiert"
 
 msgctxt "#30120"
 msgid "Announcement deleted"
