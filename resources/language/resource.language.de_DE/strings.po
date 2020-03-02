@@ -68,6 +68,14 @@ msgctxt "#30102"
 msgid "Upload Error, couldn't upload"
 msgstr "Uploadfehler, Bild konnte nicht hochgeladen werden"
 
+msgctxt "#30103"
+msgid "Preview Image unsuitable, discard"
+msgstr "Vorschaubild unbrauchbar"
+
+msgctxt "#30104"
+msgid "Preview Image could not proceed"
+msgstr "Vorschaubild wurde nicht bearbeitet"
+
 msgctxt "#30110"
 msgid "Announcement added"
 msgstr "Anzeige wurde hinzugefügt"
