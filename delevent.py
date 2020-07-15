@@ -33,7 +33,7 @@ if __name__ ==  '__main__':
             if _idx > -1:
                 broadcast.update({'file': menu[_idx].getProperty('file')})
                 args.update({'command': 'del', 'broadcast': handler.sanitize(broadcast)})
-                print args
+                handler.notifyLog(args)
                 result = bc.transmitAnnouncement(args)
             else:
                 exit(0)

@@ -47,14 +47,11 @@ def date2timeStamp(date, dFormat=regionDateFormat(), utc=False):
 def jsonrpc(query):
     querystring = {"jsonrpc": "2.0", "id": 1}
     querystring.update(query)
-    return json.loads(xbmc.executeJSONRPC(json.dumps(querystring, encoding='utf-8')))
+    return json.loads(xbmc.executeJSONRPC(json.dumps(querystring)))
 
 
 def notifyLog(message, level=xbmc.LOGDEBUG):
-    try:
-        xbmc.log('[%s %s] %s' % (addonid, version, message.encode('utf-8')), level)
-    except AttributeError:
-        xbmc.log('[%s %s] %s' % (addonid, version, message), level)
+    xbmc.log('[%s %s] %s' % (addonid, version, message), level)
 
 
 def notifyOSD(header, message, icon=IconDefault, time=5000):
@@ -105,8 +102,8 @@ class cPvrConnector(object):
             broadcasts = res['result'].get('broadcasts', False)
             if broadcasts:
                 for broadcast in broadcasts:
-                    if broadcast['title'] == title.decode('utf-8'):
-                        starttime = round(date2timeStamp(broadcast['starttime'], dFormat=JSON_TIME_FORMAT, utc=True) // 60.0) * 60
+                    if broadcast['title'] == title:
+                        starttime = round(date2timeStamp(broadcast['starttime'], dFormat=JSON_TIME_FORMAT, utc=True) / 60.0) * 60
                         if starttime != utime:
                             self.broadcasts.append(datetime.datetime.fromtimestamp(starttime).strftime(regionDateFormat()))
 
@@ -116,7 +113,7 @@ class cRequestConnector(object):
     def __init__(self):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
-        self.id = unicode(addon.getSetting('id'))
+        self.id = addon.getSetting('id')
         self.status = 'ok'
 
         if not self.id.isnumeric() or int(self.id) == 0:
