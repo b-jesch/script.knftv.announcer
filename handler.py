@@ -123,6 +123,10 @@ class cRequestConnector(object):
             self.id = str(int(time.time()))[-8:]
             addon.setSetting('id', self.id)
 
+        if self.server[-1] != '/':
+            self.server = '{}/'.format(self.server)
+            addon.setSetting('server', self.server)
+
         self.Pvr = cPvrConnector()
 
     def transmitAnnouncement(self, announcement):
