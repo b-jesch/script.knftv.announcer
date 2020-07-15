@@ -117,7 +117,7 @@ msgid "unknown Command"
 msgstr ""
 
 msgctxt "#30140"
-msgid "Announcement Server unreachable"
+msgid "Announcement Server unreachable (404)"
 msgstr ""
 
 msgctxt "#30141"
@@ -125,7 +125,7 @@ msgid "Service not available"
 msgstr ""
 
 msgctxt "#30142"
-msgid "Access forbidden"
+msgid "Access forbidden (403)"
 msgstr ""
 
 msgctxt "#30143"

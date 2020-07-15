@@ -78,23 +78,23 @@ msgstr "Vorschaubild wurde nicht bearbeitet"
 
 msgctxt "#30110"
 msgid "Announcement added"
-msgstr "Anzeige wurde hinzugefügt"
+msgstr "Tipp wurde hinzugefügt"
 
 msgctxt "#30111"
 msgid "Announcement voted"
-msgstr "Anzeige wurde gevoted"
+msgstr "Tipp wurde gevoted"
 
 msgctxt "#30112"
 msgid "Announcement already created or voted"
-msgstr "Anzeige wurde bereits hochgeladen oder gevoted"
+msgstr "Tipp wurde bereits hochgeladen oder gevoted"
 
 msgctxt "#30115"
 msgid "Announcements fetched"
-msgstr "Anzeigen wurden zusammengestellt"
+msgstr "Tipps wurden zusammengestellt"
 
 msgctxt "#30116"
 msgid "No own Announcements fetched"
-msgstr "Keine eigenen Anzeigen vorhanden"
+msgstr "Keine eigenen Tipps vorhanden"
 
 msgctxt "#30117"
 msgid "Time until Start of Broadcast too short"
@@ -106,27 +106,27 @@ msgstr "Vorschaubild aktualisiert"
 
 msgctxt "#30120"
 msgid "Announcement deleted"
-msgstr "Anzeige wurde gelöscht"
+msgstr "Tipp wurde gelöscht"
 
 msgctxt "#30121"
 msgid "Announcement File not found"
-msgstr "Anzeigendatei wurde nicht gefunden"
+msgstr "Datendatei wurde nicht gefunden"
 
 msgctxt "#30130"
 msgid "unknown Command"
 msgstr "unbekannter Befehl"
 
 msgctxt "#30140"
-msgid "Announcement Server unreachable"
-msgstr "Anzeigenserver nicht erreichbar"
+msgid "Announcement Server unreachable (404)"
+msgstr "KNFTV Server nicht erreichbar (404)"
 
 msgctxt "#30141"
 msgid "Service not available"
 msgstr "Dienst nicht verfügbar"
 
 msgctxt "#30142"
-msgid "Access forbidden"
-msgstr "Zugriff nicht erlaubt"
+msgid "Access forbidden (403)"
+msgstr "Zugriff nicht erlaubt (403)"
 
 msgctxt "#30143"
 msgid "Communication Error"
