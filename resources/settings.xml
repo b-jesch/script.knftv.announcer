@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <settings>
-    <setting id="server" type="text" label="30010" default="https://www.staff.hs-mittweida.de/~jesch/knftv/" />
-    <setting type="lsep" label="30005" />
-    <setting id="nickname" type="text" label="30011" default="" />
-    <setting id="id" type="number" label="30012" default="" />
+    <category label="30004">
+        <setting id="server" type="text" label="30010" default="https://www.staff.hs-mittweida.de/~jesch/knftv/" />
+        <setting type="lsep" label="30005" />
+        <setting id="nickname" type="text" label="30011" default="" />
+        <setting id="id" type="number" label="30012" default="" />
+    </category>
 </settings>
