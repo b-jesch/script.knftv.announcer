@@ -43,7 +43,7 @@ msgid "KN Nickname"
 msgstr ""
 
 msgctxt "#30012"
-msgid "KN Announce ID (do not edit)"
+msgid "Kodinerds Announce-/User-ID"
 msgstr ""
 
 msgctxt "#30040"
@@ -129,7 +129,7 @@ msgid "Service not available"
 msgstr ""
 
 msgctxt "#30142"
-msgid "Access forbidden (403)"
+msgid "Access forbidden (403), check your Settings"
 msgstr ""
 
 msgctxt "#30143"

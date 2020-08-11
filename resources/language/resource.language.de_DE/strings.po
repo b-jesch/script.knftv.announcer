@@ -43,8 +43,8 @@ msgid "Kodinerds Nickname"
 msgstr "Kodinerds Nickname"
 
 msgctxt "#30012"
-msgid "Kodinerds Announce ID (do not edit)"
-msgstr "Kodinerds Announce ID (bitte nicht editieren)"
+msgid "Kodinerds Announce-/User-ID"
+msgstr "Kodinerds Announce-/User-ID"
 
 msgctxt "#30040"
 msgid "Announce to KNFTV"
@@ -129,8 +129,8 @@ msgid "Service not available"
 msgstr "Dienst nicht verfügbar"
 
 msgctxt "#30142"
-msgid "Access forbidden (403)"
-msgstr "Zugriff nicht erlaubt (403)"
+msgid "Access forbidden (403), check your Settings"
+msgstr "Zugriff verboten (403), bitte Einstellungen überprüfen"
 
 msgctxt "#30143"
 msgid "Communication Error"
