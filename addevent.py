@@ -36,7 +36,7 @@ if __name__ ==  '__main__':
         broadcast.update({'rating': float(broadcast['rating']) if int(broadcast['rating']) < 10 else float(int(broadcast['rating']) / 10.0)})
 
     args.update({'command': 'add', 'broadcast': handler.sanitize(broadcast)})
-    if bc.transmitAnnouncement(args) is None:
+    if args['broadcast'].get('icon', None) is None or bc.transmitAnnouncement(args) is None:
         handler.notifyLog('Broadcast could\'nt delivered')
         handler.notifyOSD(30000, bc.status, icon=handler.IconAlert)
     else:

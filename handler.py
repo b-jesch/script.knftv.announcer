@@ -149,7 +149,7 @@ class cRequestConnector(object):
 
         if fromURL is None: return None
         try:
-            notifyLog('Transmit icon to server...')
+            notifyLog('Transmit resource file to server...')
             req_f = requests.get(fromURL, stream=True)
             req_f.raise_for_status()
 
@@ -157,7 +157,7 @@ class cRequestConnector(object):
             if result is not None:
                 return result.get('items', None)
 
-        except requests.exceptions.ConnectTimeout as e:
+        except requests.exceptions.ConnectionError as e:
             notifyLog(str(e), xbmc.LOGERROR)
             self.status = 30140
 
