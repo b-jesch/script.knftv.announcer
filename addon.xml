@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<addon id="script.knftv.announcer" name="KN FreeTV Announcer" provider-name="Birger Jesch" version="3.0.0+matrix.3">
+<addon id="script.knftv.announcer" name="KN FreeTV Announcer" provider-name="Birger Jesch" version="3.0.0+matrix.4">
     <requires>
         <import addon="xbmc.addon" version="17.0.0"/>
         <import addon="xbmc.python" version="3.0.0"/>

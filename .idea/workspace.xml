@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="URL of Announcement server changed">
+    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +49,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources/media" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -85,6 +88,8 @@
       <workItem from="1594830049391" duration="1985000" />
       <workItem from="1597257400567" duration="114000" />
       <workItem from="1598800888537" duration="3172000" />
+      <workItem from="1598809348262" duration="770000" />
+      <workItem from="1599420683509" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -149,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596371491805</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Bugfixes, new Icons">
+      <created>1598809489175</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598809489175</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,18 +176,21 @@
     <MESSAGE value="Misspelling fixed" />
     <MESSAGE value="server settings modified (add probably missing slash)" />
     <MESSAGE value="URL of Announcement server changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="URL of Announcement server changed" />
+    <MESSAGE value="Bugfixes, new Icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes, new Icons" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2425" y="12" width="938" height="904" key="CommitChangelistDialog2" timestamp="1597148233965">
+    <state x="2425" y="12" width="938" height="904" key="CommitChangelistDialog2" timestamp="1598809489014">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596371490636" />
     <state x="2425" y="12" width="938" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597148233965" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1596371493746">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2425" y="12" key="CommitChangelistDialog2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598809489014" />
+    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1598809492142">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596371493746" />
+    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1598809492142" />
     <state x="605" y="188" width="710" height="664" key="find.popup" timestamp="1594813859270">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
