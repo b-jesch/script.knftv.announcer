@@ -121,8 +121,8 @@ msgid "unknown Command"
 msgstr "unbekannter Befehl"
 
 msgctxt "#30140"
-msgid "Announcement Server unreachable (404)"
-msgstr "KNFTV Server nicht erreichbar (404)"
+msgid "Resource not available"
+msgstr "Ressource nicht verfügbar"
 
 msgctxt "#30141"
 msgid "Service not available"

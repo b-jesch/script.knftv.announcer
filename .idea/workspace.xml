@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" afterDir="false" />
     </list>
@@ -13,19 +16,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="1f2e4ef5-f1cd-4163-9d50-06bb84a209c0" />
+  <component name="JupyterTrust" id="6795d8bb-fe8e-47f3-bbeb-8c58220b0d7a" />
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
       </list>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3840" />
-    <option name="y" value="-4" />
-    <option name="width" value="1920" />
-    <option name="height" value="1084" />
   </component>
   <component name="ProjectId" id="1XASyNYwT0youl6WieohjjBmV5h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -89,6 +86,7 @@
       <workItem from="1595024456089" duration="17000" />
       <workItem from="1595148481889" duration="129000" />
       <workItem from="1596369905950" duration="690000" />
+      <workItem from="1599468278753" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -146,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594815455514</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Language strings changed">
+      <created>1597162683750</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597162683750</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,13 +165,18 @@
     <MESSAGE value="Calculation of star rating added" />
     <MESSAGE value="Misspelling fixed" />
     <MESSAGE value="server settings modified (add probably missing slash)" />
-    <option name="LAST_COMMIT_MESSAGE" value="server settings modified (add probably missing slash)" />
+    <MESSAGE value="Language strings changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Language strings changed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="505" y="12" key="CommitChangelistDialog2" timestamp="1594815454623">
+    <state x="505" y="12" key="CommitChangelistDialog2" timestamp="1597162682833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594815454623" />
+    <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597162682833" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1597161560853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597161560853" />
     <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1595024471000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -175,10 +185,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595148589739" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1594815457435">
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1597162686458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594815457435" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597162686458" />
     <state x="605" y="188" width="710" height="664" key="find.popup" timestamp="1594813859270">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

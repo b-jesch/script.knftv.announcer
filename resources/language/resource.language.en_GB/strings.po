@@ -121,7 +121,7 @@ msgid "unknown Command"
 msgstr ""
 
 msgctxt "#30140"
-msgid "Announcement Server unreachable (404)"
+msgid "Resource not available"
 msgstr ""
 
 msgctxt "#30141"
