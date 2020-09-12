@@ -98,7 +98,6 @@ class cPvrConnector(object):
                             "params": {"channelid": self.channel_id, "properties": ["thumbnail"]},
                         }
                         res = jsonrpc(query)
-                        print(res)
                         if 'result' in res:
                             details = res['result'].get('channeldetails', None)
                             if details is not None:
