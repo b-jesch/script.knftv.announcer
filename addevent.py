@@ -28,7 +28,7 @@ if __name__ ==  '__main__':
 
     bc = handler.cRequestConnector()
 
-    broadcast.update({'icon': bc.transmitFile(broadcast['icon'])})
+    broadcast.update({'icon': bc.transmitFile(broadcast['icon'], pvr.channel_logo)})
 
     # determine ratings
 

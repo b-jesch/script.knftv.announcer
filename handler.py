@@ -8,6 +8,7 @@ import xbmcgui
 import json
 import requests
 import os
+from urllib.parse import unquote_plus, urlsplit
 
 addon = xbmcaddon.Addon()
 addonid = xbmcaddon.Addon().getAddonInfo('id')
@@ -18,6 +19,7 @@ loc = xbmcaddon.Addon().getLocalizedString
 IconDefault = os.path.join(path, 'resources', 'media', 'default.png')
 IconAlert = os.path.join(path, 'resources', 'media', 'alert.png')
 IconOk = os.path.join(path, 'resources', 'media', 'ok.png')
+FALLBACK = os.path.join(path, 'fanart.jpg')
 
 TIMEDELAY = 3600    # min timediff for future broadcasts
 JSON_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
@@ -74,6 +76,7 @@ class cPvrConnector(object):
 
     def __init__(self):
         self.channel_id = None
+        self.channel_logo = None
         self.broadcasts = list()
 
     def channelName2channeldId(self, channelname):
@@ -88,7 +91,20 @@ class cPvrConnector(object):
             channels = res['result'].get('channels', False)
             if channels:
                 for channel in channels:
-                    if channel['label'] == channelname: self.channel_id = channel['channelid']
+                    if channel['label'] == channelname:
+                        self.channel_id = channel['channelid']
+                        query = {
+                            "method": "PVR.GetChannelDetails",
+                            "params": {"channelid": self.channel_id, "properties": ["thumbnail"]},
+                        }
+                        res = jsonrpc(query)
+                        print(res)
+                        if 'result' in res:
+                            details = res['result'].get('channeldetails', None)
+                            if details is not None:
+                                _netloc = urlsplit(unquote_plus(details.get('thumbnail', FALLBACK))).netloc
+                                _path = urlsplit(unquote_plus(details.get('thumbnail', FALLBACK))).path
+                                self.channel_logo = '{}{}'.format(_netloc, _path)
 
     def getBroadcasts(self, title, utime):
 
@@ -145,7 +161,7 @@ class cRequestConnector(object):
         notifyLog('Transmit announcement to server...')
         return self.sendRequest(url=self.server, js=js, headers=headers)
 
-    def transmitFile(self, fromURL):
+    def transmitFile(self, fromURL, fallback):
 
         if fromURL is None: return None
         try:
@@ -154,18 +170,22 @@ class cRequestConnector(object):
             req_f.raise_for_status()
 
             result = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-            if result is not None:
-                return result.get('items', None)
+            return result.get('items', None)
 
-        except requests.exceptions.ConnectionError as e:
+        except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
             notifyLog(str(e), xbmc.LOGERROR)
             self.status = 30140
 
-        except requests.exceptions.HTTPError as e:
-            notifyLog(str(e), xbmc.LOGERROR)
-            self.status = 30141
+            try:
+                req_f = requests.get(fallback, stream=True)
+                req_f.raise_for_status()
+                result = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
+                return result.get('items', None)
 
-        return None
+            except requests.exceptions.ConnectionError as e:
+                notifyLog(str(e), xbmc.LOGERROR)
+                self.status = 30141
+                return None
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):
 
