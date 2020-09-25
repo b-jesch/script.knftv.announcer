@@ -130,7 +130,7 @@ class cRequestConnector(object):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
         self.id = addon.getSetting('id')
-        self.status = 30110
+        self.status = 30150
 
         if not self.id.isnumeric() or int(self.id) == 0:
             self.id = str(int(time.time()))[-8:]
@@ -190,11 +190,11 @@ class cRequestConnector(object):
 
         try:
             req = requests.post(url, json=js, headers=headers, files=files, timeout=5)
-            notifyLog(req.text)
             req.raise_for_status()
 
             response = json.loads(req.text)
             self.status = response.get('code', 30150)
+            notifyLog('Result: %s: Code: %s' % (response.get('result', 'undef'), response.get('code', 30150)))
             return response
 
         except requests.exceptions.ConnectTimeout as e:
