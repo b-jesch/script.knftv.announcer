@@ -28,7 +28,14 @@ if __name__ ==  '__main__':
 
     bc = handler.cRequestConnector()
 
-    broadcast.update({'icon': bc.transmitFile(broadcast['icon'], pvr.channel_logo)})
+    response = bc.transmitFile(broadcast['icon'], pvr.channel_logo)
+    if response is not None:
+        if response['code'] == 30100: broadcast.update({'icon': response['items']})
+        elif response['code'] == 30103:
+            response = bc.uploadFile(handler.FALLBACK)
+            if response is not None and response['code'] == 30100: broadcast.update({'icon': response['items']})
+    else:
+        broadcast.update({'icon': None})
 
     # determine ratings
 

@@ -61,7 +61,7 @@ msgstr ""
 # Status and error messages
 
 msgctxt "#30100"
-msgid "Preview Upload successful"
+msgid "Transfer successful"
 msgstr ""
 
 msgctxt "#30101"
@@ -121,7 +121,7 @@ msgid "unknown Command"
 msgstr ""
 
 msgctxt "#30140"
-msgid "Resource not available"
+msgid "Resource not available, use Fallback"
 msgstr ""
 
 msgctxt "#30141"

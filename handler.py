@@ -5,6 +5,7 @@ import datetime
 import xbmc
 import xbmcaddon
 import xbmcgui
+import xbmcvfs
 import json
 import requests
 import os
@@ -13,7 +14,7 @@ from urllib.parse import unquote_plus, urlsplit
 addon = xbmcaddon.Addon()
 addonid = xbmcaddon.Addon().getAddonInfo('id')
 version = xbmcaddon.Addon().getAddonInfo('version')
-path = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('path'))
+path = xbmcvfs.translatePath(xbmcaddon.Addon().getAddonInfo('path'))
 loc = xbmcaddon.Addon().getLocalizedString
 
 IconDefault = os.path.join(path, 'resources', 'media', 'default.png')
@@ -129,7 +130,7 @@ class cRequestConnector(object):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
         self.id = addon.getSetting('id')
-        self.status = 'ok'
+        self.status = 30110
 
         if not self.id.isnumeric() or int(self.id) == 0:
             self.id = str(int(time.time()))[-8:]
@@ -167,24 +168,23 @@ class cRequestConnector(object):
             notifyLog('Transmit resource file to server...')
             req_f = requests.get(fromURL, stream=True)
             req_f.raise_for_status()
-
-            result = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-            return result.get('items', None)
+            return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
 
         except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
             notifyLog(str(e), xbmc.LOGERROR)
             self.status = 30140
-
             try:
                 req_f = requests.get(fallback, stream=True)
                 req_f.raise_for_status()
-                result = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-                return result.get('items', None)
+                return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
 
             except requests.exceptions.ConnectionError as e:
                 notifyLog(str(e), xbmc.LOGERROR)
                 self.status = 30141
-                return None
+        return None
+
+    def uploadFile(self, file):
+        return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb')})
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):
 
@@ -193,10 +193,9 @@ class cRequestConnector(object):
             notifyLog(req.text)
             req.raise_for_status()
 
-            js = json.loads(req.text)
-            response = js.get('result', 'failure')
-            self.status = js.get('code', 30150)
-            if response == 'ok': return js
+            response = json.loads(req.text)
+            self.status = response.get('code', 30150)
+            return response
 
         except requests.exceptions.ConnectTimeout as e:
             notifyLog(str(e), xbmc.LOGERROR)

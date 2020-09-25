@@ -61,8 +61,8 @@ msgstr "Meine Tipps auf KNFTV löschen"
 # Status and error messages
 
 msgctxt "#30100"
-msgid "Preview Upload successful"
-msgstr "Vorschaubild erfolgreich hochgeladen"
+msgid "Transfer successful"
+msgstr "Übertragung erfolgreich"
 
 msgctxt "#30101"
 msgid "Upload Error, couldn't move to Cache"
@@ -121,8 +121,8 @@ msgid "unknown Command"
 msgstr "unbekannter Befehl"
 
 msgctxt "#30140"
-msgid "Resource not available"
-msgstr "Ressource nicht verfügbar"
+msgid "Resource not available, use Fallback"
+msgstr "Ressource nicht verfügbar, benutze Fallback"
 
 msgctxt "#30141"
 msgid "Service not available"

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="" />
+    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/media/screenshots/sc1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/media/screenshots/sc2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/media/screenshots/sc3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fanart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/fanart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/media/screenshots" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,7 +57,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/media/screenshots" />
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/media" />
     </key>
@@ -89,6 +105,10 @@
       <workItem from="1599554518994" duration="20000" />
       <workItem from="1599896838414" duration="4251000" />
       <workItem from="1599902377833" duration="2099000" />
+      <workItem from="1599907307737" duration="152000" />
+      <workItem from="1600000972727" duration="13000" />
+      <workItem from="1600024511984" duration="189000" />
+      <workItem from="1601036385483" duration="9820000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -174,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599903814331</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="remove print statement">
+      <created>1599907358919</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1599907358919</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,23 +219,29 @@
     <MESSAGE value="Bugfixes, new Icons" />
     <MESSAGE value="Icon changed" />
     <MESSAGE value="improved exception handling on read timeouts" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved exception handling on read timeouts" />
+    <MESSAGE value="remove print statement" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove print statement" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2425" y="12" width="912" height="904" key="CommitChangelistDialog2" timestamp="1599903814223">
+    <state x="2425" y="12" width="912" height="904" key="CommitChangelistDialog2" timestamp="1599907358793">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596371490636" />
     <state x="2425" y="12" width="938" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597148233965" />
-    <state x="2425" y="12" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599903814223" />
-    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1599903815962">
+    <state x="2425" y="12" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599907358793" />
+    <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600024698875">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600024698875" />
+    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1599907361086">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596371493746" />
-    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599903815962" />
-    <state x="605" y="188" width="710" height="664" key="find.popup" timestamp="1594813859270">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599907361086" />
+    <state x="2525" y="195" width="710" height="690" key="find.popup" timestamp="1601037286400">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="605" y="188" width="710" height="664" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594813859270" />
+    <state x="2525" y="195" width="710" height="690" key="find.popup/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601037286400" />
   </component>
 </project>
