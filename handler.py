@@ -9,21 +9,24 @@ import json
 import requests
 import os
 
+from urllib import unquote_plus
+from urlparse import urlsplit
+
 addon = xbmcaddon.Addon()
-addonid = xbmcaddon.Addon().getAddonInfo('id')
-version = xbmcaddon.Addon().getAddonInfo('version')
-path = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('path'))
-loc = xbmcaddon.Addon().getLocalizedString
+addonid = addon.getAddonInfo('id')
+version = addon.getAddonInfo('version')
+path = xbmc.translatePath(addon.getAddonInfo('path'))
+loc = addon.getLocalizedString
 
 IconDefault = os.path.join(path, 'resources', 'media', 'default.png')
 IconAlert = os.path.join(path, 'resources', 'media', 'alert.png')
 IconOk = os.path.join(path, 'resources', 'media', 'ok.png')
+FALLBACK = os.path.join(path, 'fanart.jpg')
 
 TIMEDELAY = 3600    # min timediff for future broadcasts
 JSON_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 UTC_OFFSET = int(round((datetime.datetime.now() - datetime.datetime.utcnow()).seconds, -1))
 
-MAIN_PATH = 'index.php'
 UPLOAD_PATH = 'upload.php'
 
 OSD = xbmcgui.Dialog()
@@ -91,7 +94,19 @@ class cPvrConnector(object):
             channels = res['result'].get('channels', False)
             if channels:
                 for channel in channels:
-                    if channel['label'] == channelname: self.channel_id = channel['channelid']
+                    if channel['label'] == channelname:
+                        self.channel_id = channel['channelid']
+                        query = {
+                            "method": "PVR.GetChannelDetails",
+                            "params": {"channelid": self.channel_id, "properties": ["thumbnail"]},
+                        }
+                        res = jsonrpc(query)
+                        if 'result' in res:
+                            details = res['result'].get('channeldetails', None)
+                            if details is not None:
+                                _netloc = urlsplit(unquote_plus(details.get('thumbnail', FALLBACK))).netloc
+                                _path = urlsplit(unquote_plus(details.get('thumbnail', FALLBACK))).path
+                                self.channel_logo = '{}{}'.format(_netloc, _path)
 
     def getBroadcasts(self, title, utime):
 
@@ -117,7 +132,7 @@ class cRequestConnector(object):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
         self.id = unicode(addon.getSetting('id'))
-        self.status = 'ok'
+        self.status = 30110
 
         if not self.id.isnumeric() or int(self.id) == 0:
             self.id = str(int(time.time()))[-8:]
@@ -148,39 +163,41 @@ class cRequestConnector(object):
         notifyLog('Transmit announcement to server...')
         return self.sendRequest(url=self.server, js=js, headers=headers)
 
-    def transmitFile(self, fromURL):
+    def transmitFile(self, fromURL, fallback):
 
         if fromURL is None: return None
         try:
             notifyLog('Transmit resource file to server...')
             req_f = requests.get(fromURL, stream=True)
             req_f.raise_for_status()
+            return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
 
-            result = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-            if result is not None:
-                return result.get('items', None)
-
-        except requests.exceptions.ConnectionError as e:
+        except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
             notifyLog(str(e), xbmc.LOGERROR)
             self.status = 30140
+            try:
+                req_f = requests.get(fallback, stream=True)
+                req_f.raise_for_status()
+                return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
 
-        except requests.exceptions.HTTPError as e:
-            notifyLog(str(e), xbmc.LOGERROR)
-            self.status = 30141
-
+            except requests.exceptions.ConnectionError as e:
+                notifyLog(str(e), xbmc.LOGERROR)
+                self.status = 30141
         return None
+
+    def uploadFile(self, file):
+        return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb')})
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):
 
         try:
             req = requests.post(url, json=js, headers=headers, files=files, timeout=5)
-            notifyLog(req.text)
             req.raise_for_status()
 
-            js = json.loads(req.text)
-            response = js.get('result', 'failure')
-            self.status = js.get('code', 30150)
-            if response == 'ok': return js
+            response = json.loads(req.text)
+            self.status = response.get('code', 30150)
+            notifyLog('Result: %s: Code: %s' % (response.get('result', 'undef'), response.get('code', 30150)))
+            return response
 
         except requests.exceptions.ConnectTimeout as e:
             notifyLog(str(e), xbmc.LOGERROR)
@@ -201,5 +218,4 @@ class cRequestConnector(object):
             self.status = 30143
 
         return None
-
 
