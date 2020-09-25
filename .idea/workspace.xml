@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="Screenshots added, Code enhancements">
-      <change afterPath="$PROJECT_DIR$/resources/media/screenshots/sc1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/media/screenshots/sc2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/media/screenshots/sc3.png" afterDir="false" />
+    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/delevent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/fanart.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +90,7 @@
       <workItem from="1595148481889" duration="129000" />
       <workItem from="1596369905950" duration="690000" />
       <workItem from="1599468278753" duration="1934000" />
-      <workItem from="1601047096984" duration="4890000" />
+      <workItem from="1601047096984" duration="5920000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -178,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599469633155</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Screenshots added, Code enhancements">
+      <created>1601052556293</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601052556293</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,14 +193,15 @@
     <MESSAGE value="Language strings changed" />
     <MESSAGE value="Bugfixes, new Icon" />
     <MESSAGE value="new Icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="new Icons" />
+    <MESSAGE value="Screenshots added, Code enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Screenshots added, Code enhancements" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2425" y="12" key="CommitChangelistDialog2" timestamp="1601052379935">
+    <state x="2425" y="12" key="CommitChangelistDialog2" timestamp="1601052555246">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597162682833" />
-    <state x="2425" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601052379935" />
+    <state x="2425" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601052555246" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1597161560853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -216,11 +215,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595148589739" />
-    <state x="2372" y="188" key="Vcs.Push.Dialog.v2" timestamp="1599469636148">
+    <state x="2372" y="188" key="Vcs.Push.Dialog.v2" timestamp="1601052559310">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597162686458" />
-    <state x="2372" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599469636148" />
+    <state x="2372" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601052559310" />
     <state x="605" y="188" width="710" height="664" key="find.popup" timestamp="1594813859270">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

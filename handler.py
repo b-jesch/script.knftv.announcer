@@ -132,7 +132,7 @@ class cRequestConnector(object):
         self.server = addon.getSetting('server')
         self.nickname = addon.getSetting('nickname')
         self.id = unicode(addon.getSetting('id'))
-        self.status = 30110
+        self.status = 30150
 
         if not self.id.isnumeric() or int(self.id) == 0:
             self.id = str(int(time.time()))[-8:]

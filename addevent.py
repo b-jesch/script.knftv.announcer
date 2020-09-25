@@ -30,10 +30,10 @@ if __name__ == '__main__':
 
     response = bc.transmitFile(broadcast['icon'], pvr.channel_logo)
     if response is not None:
-        if response['code'] == 30100: broadcast.update({'icon': response['items']})
+        if response['result'] == 'ok': broadcast.update({'icon': response['items']})
         elif response['code'] == 30103:
             response = bc.uploadFile(handler.FALLBACK)
-            if response is not None and response['code'] == 30100: broadcast.update({'icon': response['items']})
+            if response is not None and response['result'] == 'ok': broadcast.update({'icon': response['items']})
     else:
         broadcast.update({'icon': None})
 
