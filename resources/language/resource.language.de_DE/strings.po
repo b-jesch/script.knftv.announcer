@@ -125,12 +125,12 @@ msgid "Resource not available"
 msgstr "Ressource nicht verfügbar"
 
 msgctxt "#30141"
-msgid "Service not available"
-msgstr "Dienst nicht verfügbar"
+msgid "Service not available (404), check your Settings"
+msgstr "Dienst nicht verfügbar (404), Einstellungen überprüfen"
 
 msgctxt "#30142"
 msgid "Access forbidden (403), check your Settings"
-msgstr "Zugriff verboten (403), bitte Einstellungen überprüfen"
+msgstr "Zugriff verboten (403), Einstellungen überprüfen"
 
 msgctxt "#30143"
 msgid "Communication Error"

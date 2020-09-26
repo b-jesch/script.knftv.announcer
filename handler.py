@@ -204,9 +204,9 @@ class cRequestConnector(object):
             self.status = 30140
 
         except requests.exceptions.HTTPError as e:
-            self.status = 30141
             if req.status_code == 403: self.status = 30142
-            elif req.status_code == 404: self.status = 30140
+            elif req.status_code == 404: self.status = 30141
+            else: self.status = 30143
             notifyLog(str(e), xbmc.LOGERROR)
 
         except ValueError as e:

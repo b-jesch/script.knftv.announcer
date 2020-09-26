@@ -125,7 +125,7 @@ msgid "Resource not available"
 msgstr ""
 
 msgctxt "#30141"
-msgid "Service not available"
+msgid "Service not available (404), check your Settings"
 msgstr ""
 
 msgctxt "#30142"
