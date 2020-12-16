@@ -125,11 +125,11 @@ msgid "Resource not available, use Fallback"
 msgstr ""
 
 msgctxt "#30141"
-msgid "Service not available"
+msgid "Service not available (404), check your Settings"
 msgstr ""
 
 msgctxt "#30142"
-msgid "Access forbidden (403)"
+msgid "Access forbidden (403), check your Settings"
 msgstr ""
 
 msgctxt "#30143"
