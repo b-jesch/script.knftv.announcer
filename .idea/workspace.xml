@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
     </list>
@@ -108,7 +106,8 @@
       <workItem from="1601228026352" duration="11000" />
       <workItem from="1604144904928" duration="966000" />
       <workItem from="1604408431710" duration="39000" />
-      <workItem from="1608123660384" duration="937000" />
+      <workItem from="1608123660384" duration="1462000" />
+      <workItem from="1608132144722" duration="477000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -215,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601056817073</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Introducing unique formatted DateTime structures">
+      <created>1608124604816</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608124604816</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,28 +242,7 @@
     <MESSAGE value="remove print statement" />
     <MESSAGE value="Screenshots added, Code enhancements" />
     <MESSAGE value="Bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2425" y="12" width="912" height="904" key="CommitChangelistDialog2" timestamp="1601056816910">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596371490636" />
-    <state x="2425" y="12" width="938" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597148233965" />
-    <state x="2425" y="12" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601056816910" />
-    <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600024698875">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600024698875" />
-    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1601056818878">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596371493746" />
-    <state x="2372" y="195" width="800" height="556" key="Vcs.Push.Dialog.v2/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601056818878" />
-    <state x="2525" y="195" width="710" height="690" key="find.popup" timestamp="1601037286400">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="605" y="188" width="710" height="664" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594813859270" />
-    <state x="2525" y="195" width="710" height="690" key="find.popup/67.27.1853.1053/3840.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601037286400" />
+    <MESSAGE value="Introducing unique formatted DateTime structures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introducing unique formatted DateTime structures" />
   </component>
 </project>
