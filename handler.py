@@ -181,14 +181,14 @@ class cRequestConnector(object):
         announcement.update({'id': self.id, 'nickname': self.nickname})
         js = json.dumps(announcement, sort_keys=True, indent=4)
         headers = {'content-type': 'application/json'}
-        notifyLog('Transmit announcement to server...')
+        notifyLog('Transmit announcement to {}'.format(self.server))
         return self.sendRequest(url=self.server, js=js, headers=headers)
 
     def transmitFile(self, fromURL, fallback):
 
         if fromURL is None: return None
         try:
-            notifyLog('Transmit resource file to server...')
+            notifyLog('Transmit resource file to {}'.format(self.server))
             req_f = requests.get(fromURL, stream=True)
             req_f.raise_for_status()
             return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})

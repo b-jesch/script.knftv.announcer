@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="Bugfixes #2">
+    <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +96,8 @@
       <workItem from="1601047096984" duration="5920000" />
       <workItem from="1601057014251" duration="1388000" />
       <workItem from="1601133541031" duration="487000" />
+      <workItem from="1608122589588" duration="808000" />
+      <workItem from="1608134047922" duration="109000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -188,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601057319478</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Introducing unique formatted datetime format">
+      <created>1608122744276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608122744277</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,36 +216,21 @@
     <MESSAGE value="new Icons" />
     <MESSAGE value="Screenshots added, Code enhancements" />
     <MESSAGE value="Bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes" />
+    <MESSAGE value="Introducing unique formatted datetime format" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introducing unique formatted datetime format" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2425" y="12" key="CommitChangelistDialog2" timestamp="1601133999508">
+    <state x="2425" y="12" key="CommitChangelistDialog2" timestamp="1608122743399">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597162682833" />
-    <state x="2425" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601133999508" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1597161560853">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597161560853" />
-    <state x="2607" y="216" key="FileChooserDialogImpl" timestamp="1599470222711">
+    <state x="2425" y="12" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608122743399" />
+    <state x="2372" y="188" key="Vcs.Push.Dialog.v2" timestamp="1608122749001">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595024471000" />
-    <state x="2607" y="216" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599470222711" />
-    <state x="351" y="78" key="SettingsEditor" timestamp="1595148589739">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595148589739" />
-    <state x="2372" y="188" key="Vcs.Push.Dialog.v2" timestamp="1601057322199">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597162686458" />
-    <state x="2372" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601057322199" />
+    <state x="2372" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608122749001" />
     <state x="2525" y="188" width="710" height="664" key="find.popup" timestamp="1601133576141">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="605" y="188" width="710" height="664" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594813859270" />
     <state x="2525" y="188" width="710" height="664" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601133576141" />
   </component>
 </project>

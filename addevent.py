@@ -11,9 +11,6 @@ if __name__ == '__main__':
 
     args = dict()
     broadcast = dict()
-    handler.notifyLog(xbmc.getInfoLabel('ListItem.StartTime'))
-    handler.notifyLog(xbmc.getInfoLabel('ListItem.EndTime'))
-
     broadcast.update({'channelname': xbmc.getInfoLabel('ListItem.ChannelName'),
                       'icon': xbmc.getInfoLabel('ListItem.Icon'),
                       'date': handler.date2JTF(xbmc.getInfoLabel('ListItem.Date')),
@@ -26,7 +23,6 @@ if __name__ == '__main__':
                       'rating': xbmc.getInfoLabel('ListItem.Rating'),
                       })
 
-    date = xbmc.getInfoLabel('ListItem.Date')
     # check for additional events (pvr connection required)
 
     pvr = handler.cPvrConnector()
