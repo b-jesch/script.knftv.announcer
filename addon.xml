@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<addon id="script.knftv.announcer" name="KN FreeTV Announcer" provider-name="Birger Jesch" version="3.0.1+matrix.1">
+<addon id="script.knftv.announcer" name="KN FreeTV Announcer" provider-name="Birger Jesch" version="3.1.0+matrix">
     <requires>
         <import addon="xbmc.addon" version="17.0.0"/>
         <import addon="xbmc.python" version="3.0.0"/>
@@ -24,13 +24,14 @@
         <summary lang="de_DE">Teile Deine TV-Tipps mit der Kodinerds Community</summary>
         <description lang="en_GB">TV tips from members of the German Kodi community "kodinerds.tv" are always a guarantee for high quality entertainment and top quality movies that are broadcasted on German Free TV.</description>
         <description lang="de_DE">TV Tipps von Mitgliedern der deutschen Kodi Community "kodinerds.tv" sind immer ein Garant für hochwertige Unterhaltung und Filme in bester Qualität, die im deutschen Free TV gesendet werden.</description>
-        <disclaimer lang="en_GB">Use at your own risk. Post suggestions, improvements or bug reports directly to the Community.</disclaimer>
-        <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Anregungen, Verbesserungen oder Bugs bitte direkt in die Community posten.</disclaimer>
+        <disclaimer lang="en_GB">Use at your own risk. Post problems or bug reports directly to the Community: https://bit.ly/35LNsUS</disclaimer>
+        <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Bei Problemen oder Bugs bitte direkt in die Community posten: https://bit.ly/35LNsUS</disclaimer>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website>https://www.kodinerds.net/index.php/Thread/68521-RELEASE-KNFTV-Announcer-TV-Tipps-aus-dem-freeTV-von-der-Kodinerds-Community-f%C3%BCr/</website>
+        <website>https://bit.ly/35LNsUS</website>
         <source>https://github.com/b-jesch/script.knftv.announcer</source>
         <news>
+3.1.0+matrix Introducing unique formatted DateTime structures
 3.0.1+matrix.1 Screenshots added, Code enhancements
 3.0.0+matrix.2 settings.xml changed
 3.0.0+matrix.1 URL of Announcement Server changed

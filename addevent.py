@@ -7,13 +7,20 @@ import handler
 if __name__ ==  '__main__':
 
     handler.notifyLog('Context menu called: add event')
+    handler.notifyLog('Local time format of client: {}'.format(handler.regionDateFormat()))
+
     args = dict()
     broadcast = dict()
-    broadcast.update({'channelname': xbmc.getInfoLabel('ListItem.ChannelName'), 'icon': xbmc.getInfoLabel('ListItem.Icon'),
-                      'date': xbmc.getInfoLabel('ListItem.Date'), 'starttime': xbmc.getInfoLabel('ListItem.StartTime'),
-                      'endtime': xbmc.getInfoLabel('ListItem.EndTime'), 'title': xbmc.getInfoLabel('ListItem.Title'),
-                      'epgeventtitle': xbmc.getInfoLabel('ListItem.EpgEventTitle'), 'genre': xbmc.getInfoLabel('ListItem.Genre'),
-                      'plot': xbmc.getInfoLabel('ListItem.Plot'),'rating': xbmc.getInfoLabel('ListItem.Rating'),
+    broadcast.update({'channelname': xbmc.getInfoLabel('ListItem.ChannelName'),
+                      'icon': xbmc.getInfoLabel('ListItem.Icon'),
+                      'date': handler.date2JTF(xbmc.getInfoLabel('ListItem.Date')),
+                      'starttime': handler.date2JTF(xbmc.getInfoLabel('ListItem.StartTime'), timeonly=True),
+                      'endtime': handler.date2JTF(xbmc.getInfoLabel('ListItem.EndTime'), timeonly=True),
+                      'title': xbmc.getInfoLabel('ListItem.Title'),
+                      'epgeventtitle': xbmc.getInfoLabel('ListItem.EpgEventTitle'),
+                      'genre': xbmc.getInfoLabel('ListItem.Genre'),
+                      'plot': xbmc.getInfoLabel('ListItem.Plot'),
+                      'rating': xbmc.getInfoLabel('ListItem.Rating'),
                       })
 
     # check for additional events (pvr connection required)
