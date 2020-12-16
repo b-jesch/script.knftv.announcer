@@ -24,7 +24,9 @@ IconOk = os.path.join(path, 'resources', 'media', 'ok.png')
 FALLBACK = os.path.join(path, 'fanart.jpg')
 
 TIMEDELAY = 3600    # min timediff for future broadcasts
-JSON_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+JSON_DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+JSON_DATETIME_FORMAT_SHORT = '%Y-%m-%d %H:%M'
+JSON_TIME_FORMAT_SHORT = '%H:%M'
 UTC_OFFSET = int(round((datetime.datetime.now() - datetime.datetime.utcnow()).seconds, -1))
 
 UPLOAD_PATH = 'upload.php'
@@ -33,18 +35,37 @@ OSD = xbmcgui.Dialog()
 LI = xbmcgui.ListItem()
 
 
+def regionTimeFormat():
+    # Kodi bug: returns '%H%H' or '%I%I' sometimes
+    return xbmc.getRegion('time').replace('%H%H', '%H').replace('%I%I', '%I').replace(':%S', '')
+
+
 def regionDateFormat():
 
-    # Kodi bug: returns '%H%H' or '%I%I' sometimes
-
-    return xbmc.getRegion('dateshort') + ' ' + xbmc.getRegion('time').replace('%H%H', '%H').replace('%I%I', '%I').replace(':%S', '')
+    return '{} {}'.format(xbmc.getRegion('dateshort'), regionTimeFormat())
 
 
-def date2timeStamp(date, dFormat=regionDateFormat(), utc=False):
+def date2timeStamp(date, dFormat=JSON_DATETIME_FORMAT_SHORT, utc=False):
 
-    dtt = time.strptime(date, dFormat)
-    if not utc: return int(time.mktime(dtt))
-    return int(time.mktime(dtt)) + UTC_OFFSET
+    try:
+        dtt = time.strptime(date, dFormat)
+    except ValueError:
+        try:
+            dtt = time.strptime(date, regionDateFormat())
+        except ValueError:
+            dtt = 0
+    finally:
+        if not utc: return int(time.mktime(dtt))
+        return int(time.mktime(dtt)) + UTC_OFFSET
+
+
+def date2JTF(date, timeonly=False):
+    if timeonly:
+        dtt = datetime.datetime.strptime(date, regionTimeFormat())
+        return dtt.strftime(JSON_TIME_FORMAT_SHORT)
+    else:
+        dtt = datetime.datetime.strptime(date, regionDateFormat())
+        return dtt.strftime(JSON_DATETIME_FORMAT_SHORT)
 
 
 def jsonrpc(query):
@@ -121,7 +142,7 @@ class cPvrConnector(object):
             if broadcasts:
                 for broadcast in broadcasts:
                     if broadcast['title'] == title.decode('utf-8'):
-                        starttime = round(date2timeStamp(broadcast['starttime'], dFormat=JSON_TIME_FORMAT, utc=True) // 60.0) * 60
+                        starttime = round(date2timeStamp(broadcast['starttime'], dFormat=JSON_DATETIME_FORMAT, utc=True) // 60.0) * 60
                         if starttime != utime:
                             self.broadcasts.append(datetime.datetime.fromtimestamp(starttime).strftime(regionDateFormat()))
 
