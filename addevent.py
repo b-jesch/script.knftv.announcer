@@ -34,15 +34,9 @@ if __name__ == '__main__':
     # check online availability of images and move to server cache
 
     bc = handler.cRequestConnector()
-
-    response = bc.transmitFile(broadcast['icon'], pvr.channel_logo)
+    response = bc.transmitFile([broadcast['icon'], pvr.channel_logo, handler.FALLBACK])
     if response is not None:
-        if response['result'] == 'ok': broadcast.update({'icon': response['items']})
-        elif response['code'] == 30103:
-            response = bc.uploadFile(handler.FALLBACK)
-            if response is not None and response['result'] == 'ok': broadcast.update({'icon': response['items']})
-    else:
-        broadcast.update({'icon': None})
+        broadcast.update({'icon': response['items'], 'icontype': response['icontype']})
 
     # determine ratings
 

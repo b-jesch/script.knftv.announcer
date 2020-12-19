@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import time
-import datetime
 import xbmc
 import xbmcaddon
 import xbmcgui
@@ -27,7 +26,7 @@ TIMEDELAY = 3600    # min timediff for future broadcasts
 JSON_DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 JSON_DATETIME_FORMAT_SHORT = '%Y-%m-%d %H:%M'
 JSON_TIME_FORMAT_SHORT = '%H:%M'
-UTC_OFFSET = int(round((datetime.datetime.now() - datetime.datetime.utcnow()).seconds, -1))
+UTC_OFFSET = -time.timezone
 
 UPLOAD_PATH = 'upload.php'
 
@@ -61,11 +60,11 @@ def date2timeStamp(date, dFormat=JSON_DATETIME_FORMAT_SHORT, utc=False):
 
 def date2JTF(date, timeonly=False):
     if timeonly:
-        dtt = datetime.datetime.strptime(date, regionTimeFormat())
-        return dtt.strftime(JSON_TIME_FORMAT_SHORT)
+        dtt = time.strptime(date, regionTimeFormat())
+        return time.strftime(JSON_TIME_FORMAT_SHORT, dtt)
     else:
-        dtt = datetime.datetime.strptime(date, regionDateFormat())
-        return dtt.strftime(JSON_DATETIME_FORMAT_SHORT)
+        dtt = time.strptime(date, regionDateFormat())
+        return time.strftime(JSON_DATETIME_FORMAT_SHORT, dtt)
 
 
 def jsonrpc(query):
@@ -144,7 +143,7 @@ class cPvrConnector(object):
                     if broadcast['title'] == title.decode('utf-8'):
                         starttime = round(date2timeStamp(broadcast['starttime'], dFormat=JSON_DATETIME_FORMAT, utc=True) // 60.0) * 60
                         if starttime != utime:
-                            self.broadcasts.append(datetime.datetime.fromtimestamp(starttime).strftime(regionDateFormat()))
+                            self.broadcasts.append(time.strftime(JSON_DATETIME_FORMAT_SHORT, time.gmtime(starttime + UTC_OFFSET)))
 
 
 class cRequestConnector(object):
@@ -184,30 +183,36 @@ class cRequestConnector(object):
         notifyLog('Transmit announcement to {}'.format(self.server))
         return self.sendRequest(url=self.server, js=js, headers=headers)
 
-    def transmitFile(self, fromURL, fallback):
-
-        if fromURL is None: return None
-        try:
-            notifyLog('Transmit resource file to {}'.format(self.server))
-            req_f = requests.get(fromURL, stream=True)
-            req_f.raise_for_status()
-            return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-
-        except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
-            notifyLog(str(e), xbmc.LOGERROR)
-            self.status = 30140
+    def transmitFile(self, filelist):
+        for file in filelist:
+            notifyLog('Transmit {} to {}'.format(file, self.server))
             try:
-                req_f = requests.get(fallback, stream=True)
+                req_f = requests.get(file, stream=True)
                 req_f.raise_for_status()
-                return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-
-            except requests.exceptions.ConnectionError as e:
+                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
+                if response is None:
+                    notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
+                    continue
+                elif 30101 <= response['code'] <= 30103:
+                    notifyLog(response['code'])
+                    continue
+                else:
+                    response.update({'icontype': filelist.index(file)})
+                    return response
+            except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
                 notifyLog(str(e), xbmc.LOGERROR)
-                self.status = 30141
+            except requests.exceptions.MissingSchema:
+                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb').read()})
+                if response is None:
+                    notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
+                    continue
+                elif 30101 <= response['code'] <= 30103:
+                    notifyLog(response['code'])
+                    continue
+                else:
+                    response.update({'icontype': filelist.index(file)})
+                    return response
         return None
-
-    def uploadFile(self, file):
-        return self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb')})
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):
 
@@ -239,4 +244,3 @@ class cRequestConnector(object):
             self.status = 30143
 
         return None
-
