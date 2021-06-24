@@ -136,6 +136,10 @@ msgctxt "#30143"
 msgid "Communication Error"
 msgstr "Kommunikationsfehler"
 
+msgctxt "#30144"
+msgid "Nickname not set. Check your settings"
+msgstr "Kein Nickname gesetzt. Einstellungen überprüfen"
+
 msgctxt "#30150"
 msgid "unknown Result Code"
 msgstr "unbekannter Ergebniscode"

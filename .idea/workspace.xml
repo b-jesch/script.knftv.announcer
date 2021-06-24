@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/script.knftv.announcer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/script.knftv.announcer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fanart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/fanart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.de_DE/strings.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language/resource.language.en_GB/strings.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/media/alert.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/media/alert.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/media/default.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/media/default.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/media/ok.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/media/ok.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

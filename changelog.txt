@@ -1,7 +1,0 @@
-CHANGELOG
-
-0.0.7 - Improved message handling
-0.0.6 - Cache icons on announcement server
-0.0.5 - Search for additional broadcasts of title added
-0.0.4 - Icon changed
-0.0.1 - Initial commit
