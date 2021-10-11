@@ -21,9 +21,9 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">Share Your TV tips with the German Kodinerds Community</summary>
-        <summary lang="de_DE">Teile Deine TV-Tipps mit der Kodinerds Community</summary>
-        <description lang="en_GB">TV tips from members of the German Kodi community "kodinerds.tv" are always a guarantee for high quality entertainment and top quality movies that are broadcasted on German Free TV.</description>
-        <description lang="de_DE">TV Tipps von Mitgliedern der deutschen Kodi Community "kodinerds.tv" sind immer ein Garant für hochwertige Unterhaltung und Filme in bester Qualität, die im deutschen Free TV gesendet werden.</description>
+        <summary lang="de_DE">Teile Deine TV-Tipps mit der deutschsprachigen Kodinerds Community</summary>
+        <description lang="en_GB">TV tips from members of the German Kodi community "kodinerds.net" are always a guarantee for high quality entertainment and top quality movies that are broadcasted on German Free TV.</description>
+        <description lang="de_DE">TV Tipps von Mitgliedern der deutschen Kodi Community "kodinerds.net" sind immer ein Garant für hochwertige Unterhaltung und Filme in bester Qualität, die im deutschen Free TV gesendet werden.</description>
         <disclaimer lang="en_GB">Use at your own risk. Post problems or bug reports directly to the Community: https://bit.ly/35LNsUS</disclaimer>
         <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Bei Problemen oder Bugs bitte direkt in die Community posten: https://bit.ly/35LNsUS</disclaimer>
         <platform>all</platform>
