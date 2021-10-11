@@ -58,6 +58,20 @@ msgctxt "#30042"
 msgid "Delete my Announcements on KNFTV"
 msgstr "Meine Tipps auf KNFTV löschen"
 
+# Help strings
+
+msgctxt "#30050"
+msgid "The announcement server. If you get some error messages like 'server unavailable' or 'not responding' check at first this URL for updates in the forum thread."
+msgstr "Der Abo-Server. Wenn Fehlermeldungen wie 'Server nicht verfügbar' oder 'keine Antwort' erscheinen, bitte zuerst die URL des Abo-Servers im Forum Thread auf Updates überprüfen."
+
+msgctxt "#30051"
+msgid "Your nickname. It's recommended using your nickname from the kodinerds forum."
+msgstr "Dein Nickname. Es empfiehlt sich, den Nicknamen aus dem Kodinerds Forum zu benutzen."
+
+msgctxt "#30052"
+msgid "Your unique ID for identifying your announcements. This will be generated automatically at first call so there is no need to change this."
+msgstr "Deine eindeutige ID zur Identifizierung Deiner Tipps. Die ID wird automatisch generiert und sollte nicht geändert werden."
+
 # Status and error messages
 
 msgctxt "#30100"

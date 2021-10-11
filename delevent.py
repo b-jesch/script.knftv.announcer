@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import xbmc
 import xbmcgui
 import handler
 
-if __name__ ==  '__main__':
+if __name__ == '__main__':
 
     handler.notifyLog('Context menu called: del event')
 

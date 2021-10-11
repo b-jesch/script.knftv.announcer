@@ -4,15 +4,20 @@ import sys
 
 import xbmc
 import handler
+import re
 
 if __name__ == '__main__':
 
     handler.notifyLog('Context menu called: add event')
     handler.notifyLog('Local time format of client: {}'.format(handler.regionDateFormat()))
 
+    channel = xbmc.getInfoLabel('ListItem.Channelname')
     args = dict()
     broadcast = dict()
-    broadcast.update({'channelname': xbmc.getInfoLabel('ListItem.ChannelName'),
+
+    # removing additional infos of channelnames faced in Parentheses, eg. (ger) or (deu)
+
+    broadcast.update({'channelname': re.sub(r'\([^()]*\)', '', channel).strip(),
                       'icon': xbmc.getInfoLabel('ListItem.Icon'),
                       'date': handler.date2JTF(xbmc.getInfoLabel('ListItem.Date')),
                       'starttime': handler.date2JTF(xbmc.getInfoLabel('ListItem.StartTime'), timeonly=True),
@@ -27,7 +32,7 @@ if __name__ == '__main__':
     # check for additional events (pvr connection required)
 
     pvr = handler.cPvrConnector()
-    pvr.channelName2channeldId(broadcast['channelname'])
+    pvr.channelName2channeldId(channel)
     if pvr.channel_id is not None:
         pvr.getBroadcasts(broadcast['epgeventtitle'], handler.date2timeStamp(broadcast['date']))
         if len(pvr.broadcasts) > 0: broadcast.update({'broadcasts': pvr.broadcasts})
