@@ -48,8 +48,10 @@ if __name__ == '__main__':
         sys.exit()
 
     image = broadcast['icon'].split('@', 1)
-    if len(image) > 1: response = bc.transmitFile([unquote(image[1]), pvr.channel_logo, handler.FALLBACK])
-    else: bc.transmitFile([image[0], pvr.channel_logo, handler.FALLBACK])
+    src = image[0]
+    if len(image) > 1: src = unquote(image[1])
+    if src[0:4] != 'http': src = 'http://' + src
+    response = bc.transmitFile([src, pvr.channel_logo, handler.FALLBACK])
 
     if response is not None:
         broadcast.update({'icon': response['items'], 'icontype': response['icontype']})
