@@ -5,6 +5,7 @@ import sys
 import xbmc
 import handler
 import re
+from urllib.parse import unquote
 
 if __name__ == '__main__':
 
@@ -46,7 +47,10 @@ if __name__ == '__main__':
         handler.notifyOSD(30000, 30144, icon=handler.IconAlert)
         sys.exit()
 
-    response = bc.transmitFile([broadcast['icon'], pvr.channel_logo, handler.FALLBACK])
+    image = broadcast['icon'].split('@', 1)
+    if len(image) > 1: response = bc.transmitFile([unquote(image[1]), pvr.channel_logo, handler.FALLBACK])
+    else: bc.transmitFile([image[0], pvr.channel_logo, handler.FALLBACK])
+
     if response is not None:
         broadcast.update({'icon': response['items'], 'icontype': response['icontype']})
 

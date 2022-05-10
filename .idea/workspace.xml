@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/media/screenshots" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -108,6 +109,10 @@
       <workItem from="1608132144722" duration="1778000" />
       <workItem from="1608215199090" duration="19000" />
       <workItem from="1608304183925" duration="14449000" />
+      <workItem from="1634040903076" duration="37000" />
+      <workItem from="1646298556711" duration="3135000" />
+      <workItem from="1646654102410" duration="16000" />
+      <workItem from="1652181761046" duration="1267000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -235,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633952805353</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Descriptions updated">
+      <created>1633953433589</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1633953433589</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +271,7 @@
     <MESSAGE value="Introducing unique formatted DateTime structures" />
     <MESSAGE value="improved log messages" />
     <MESSAGE value="Remove additional infos enclosed in parentheses in channelnames" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove additional infos enclosed in parentheses in channelnames" />
+    <MESSAGE value="Descriptions updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Descriptions updated" />
   </component>
 </project>
