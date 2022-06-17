@@ -183,33 +183,35 @@ class cRequestConnector(object):
 
     def transmitFile(self, filelist):
         for file in filelist:
-            notifyLog('Transmit {} to {}'.format(file, self.server))
-            try:
-                req_f = requests.get(file, stream=True)
-                req_f.raise_for_status()
-                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-                if response is None:
-                    notifyLog(self.status, xbmc.LOGERROR)
+            if xbmcvfs.exists(file):
+                notifyLog('Transmit {} to {}'.format(file, self.server))
+                try:
+                    req_f = requests.get(file, stream=True)
+                    req_f.raise_for_status()
+                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
+                    if response is None:
+                        notifyLog(self.status, xbmc.LOGERROR)
+                        continue
+                    elif 30101 <= response['code'] <= 30103:
+                        notifyLog(response['code'])
+                        continue
+                    else:
+                        response.update({'icontype': filelist.index(file)})
+                        return response
+                except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
+                    notifyLog(str(e), xbmc.LOGERROR)
                     continue
-                elif 30101 <= response['code'] <= 30103:
-                    notifyLog(response['code'])
-                    continue
-                else:
-                    response.update({'icontype': filelist.index(file)})
-                    return response
-            except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
-                notifyLog(str(e), xbmc.LOGERROR)
-            except requests.exceptions.MissingSchema:
-                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb').read()})
-                if response is None:
-                    notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
-                    continue
-                elif 30101 <= response['code'] <= 30103:
-                    notifyLog(response['code'])
-                    continue
-                else:
-                    response.update({'icontype': filelist.index(file)})
-                    return response
+                except requests.exceptions.MissingSchema:
+                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb').read()})
+                    if response is None:
+                        notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
+                        continue
+                    elif 30101 <= response['code'] <= 30103:
+                        notifyLog(response['code'])
+                        continue
+                    else:
+                        response.update({'icontype': filelist.index(file)})
+                        return response
         return None
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):

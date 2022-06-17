@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
     image = broadcast['icon'].split('@', 1)
     if len(image) > 1: response = bc.transmitFile([unquote(image[1]), pvr.channel_logo, handler.FALLBACK])
-    else: bc.transmitFile([image[0], pvr.channel_logo, handler.FALLBACK])
+    else: response = bc.transmitFile([image[0], pvr.channel_logo, handler.FALLBACK])
 
     if response is not None:
         broadcast.update({'icon': response['items'], 'icontype': response['icontype']})
