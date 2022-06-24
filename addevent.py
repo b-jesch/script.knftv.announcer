@@ -3,8 +3,11 @@
 import sys
 
 import xbmc
+import xbmcgui
 import handler
 import re
+
+Window = xbmcgui.Window(10000)
 
 if __name__ == '__main__':
 
@@ -18,7 +21,8 @@ if __name__ == '__main__':
     # removing additional infos of channelnames faced in Parentheses, eg. (ger) or (deu)
 
     broadcast.update({'channelname': re.sub(r'\([^()]*\)', '', channel).strip(),
-                      'icon': [xbmc.getInfoLabel('ListItem.EPGEventIcon'), xbmc.getInfoLabel('ListItem.Icon'),
+                      'icon': [Window.getProperty('PVR.Artwork.fanart'), Window.getProperty('PVR.Artwork.Poster'),
+                               xbmc.getInfoLabel('ListItem.EPGEventIcon'), xbmc.getInfoLabel('ListItem.Icon'),
                                handler.FALLBACK],
                       'date': handler.date2JTF(xbmc.getInfoLabel('ListItem.Date')),
                       'starttime': handler.date2JTF(xbmc.getInfoLabel('ListItem.StartTime'), timeonly=True),
