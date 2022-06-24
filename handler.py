@@ -8,7 +8,7 @@ import xbmcvfs
 import json
 import requests
 import os
-from urllib.parse import unquote_plus, urlsplit
+from urllib.parse import unquote, unquote_plus, urlsplit
 
 addon = xbmcaddon.Addon()
 addonid = xbmcaddon.Addon().getAddonInfo('id')
@@ -19,7 +19,7 @@ loc = xbmcaddon.Addon().getLocalizedString
 IconDefault = os.path.join(path, 'resources', 'media', 'default.png')
 IconAlert = os.path.join(path, 'resources', 'media', 'alert.png')
 IconOk = os.path.join(path, 'resources', 'media', 'ok.png')
-FALLBACK = os.path.join(path, 'fanart.jpg')
+FALLBACK = os.path.join('file://', path, 'fanart.jpg')
 
 TIMEDELAY = 3600    # min timediff for future broadcasts
 JSON_DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
@@ -183,35 +183,38 @@ class cRequestConnector(object):
 
     def transmitFile(self, filelist):
         for file in filelist:
-            if xbmcvfs.exists(file):
-                notifyLog('Transmit {} to {}'.format(file, self.server))
-                try:
-                    req_f = requests.get(file, stream=True)
-                    req_f.raise_for_status()
-                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-                    if response is None:
-                        notifyLog(self.status, xbmc.LOGERROR)
-                        continue
-                    elif 30101 <= response['code'] <= 30103:
-                        notifyLog(response['code'])
-                        continue
-                    else:
-                        response.update({'icontype': filelist.index(file)})
-                        return response
-                except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
-                    notifyLog(str(e), xbmc.LOGERROR)
+            if file == '': continue
+
+            image = file.split('@', 1)
+            src = unquote(image[1]) if len(image) > 1 else image[0]
+            notifyLog('Transmit {} to {}'.format(src, self.server))
+            try:
+                req_f = requests.get(src, stream=True)
+                req_f.raise_for_status()
+                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
+                if response is None:
+                    notifyLog(self.status, xbmc.LOGERROR)
                     continue
-                except requests.exceptions.MissingSchema:
-                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(file, 'rb').read()})
-                    if response is None:
-                        notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
-                        continue
-                    elif 30101 <= response['code'] <= 30103:
-                        notifyLog(response['code'])
-                        continue
-                    else:
-                        response.update({'icontype': filelist.index(file)})
-                        return response
+                elif 30101 <= response['code'] <= 30103:
+                    notifyLog(response['code'])
+                    continue
+                else:
+                    response.update({'icontype': filelist.index(file)})
+                    return response
+            except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
+                notifyLog(str(e), xbmc.LOGERROR)
+                continue
+            except requests.exceptions.MissingSchema:
+                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(src, 'rb').read()})
+                if response is None:
+                    notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
+                    continue
+                elif 30101 <= response['code'] <= 30103:
+                    notifyLog(response['code'])
+                    continue
+                else:
+                    response.update({'icontype': filelist.index(file)})
+                    return response
         return None
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):

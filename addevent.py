@@ -5,7 +5,6 @@ import sys
 import xbmc
 import handler
 import re
-from urllib.parse import unquote
 
 if __name__ == '__main__':
 
@@ -19,7 +18,8 @@ if __name__ == '__main__':
     # removing additional infos of channelnames faced in Parentheses, eg. (ger) or (deu)
 
     broadcast.update({'channelname': re.sub(r'\([^()]*\)', '', channel).strip(),
-                      'icon': xbmc.getInfoLabel('ListItem.Icon'),
+                      'icon': [xbmc.getInfoLabel('ListItem.EPGEventIcon'), xbmc.getInfoLabel('ListItem.Icon'),
+                               handler.FALLBACK],
                       'date': handler.date2JTF(xbmc.getInfoLabel('ListItem.Date')),
                       'starttime': handler.date2JTF(xbmc.getInfoLabel('ListItem.StartTime'), timeonly=True),
                       'endtime': handler.date2JTF(xbmc.getInfoLabel('ListItem.EndTime'), timeonly=True),
@@ -38,8 +38,6 @@ if __name__ == '__main__':
         pvr.getBroadcasts(broadcast['epgeventtitle'], handler.date2timeStamp(broadcast['date']))
         if len(pvr.broadcasts) > 0: broadcast.update({'broadcasts': pvr.broadcasts})
 
-    # check online availability of images and move to server cache
-
     bc = handler.cRequestConnector()
 
     # check if nickname is set
@@ -47,11 +45,9 @@ if __name__ == '__main__':
         handler.notifyOSD(30000, 30144, icon=handler.IconAlert)
         sys.exit()
 
-    image = broadcast['icon'].split('@', 1)
-    src = image[0]
-    if len(image) > 1: src = unquote(image[1])
-    if src[0:4] != 'http': src = 'http://' + src
-    response = bc.transmitFile([src, pvr.channel_logo, handler.FALLBACK])
+    # check online availability of images and move to server cache
+
+    response = bc.transmitFile(broadcast['icon'])
 
     if response is not None:
         broadcast.update({'icon': response['items'], 'icontype': response['icontype']})
