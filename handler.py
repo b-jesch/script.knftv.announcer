@@ -201,20 +201,24 @@ class cRequestConnector(object):
                 else:
                     response.update({'icontype': filelist.index(file)})
                     return response
-            except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
+            except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError, FileNotFoundError) as e:
                 notifyLog(str(e), xbmc.LOGERROR)
                 continue
-            except requests.exceptions.MissingSchema:
-                response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(src, 'rb').read()})
-                if response is None:
-                    notifyLog('Status code: '.format(self.status), xbmc.LOGERROR)
+            except (requests.exceptions.MissingSchema, requests.exceptions.InvalidSchema):
+                try:
+                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(src, 'rb').read()})
+                    if response is None:
+                        notifyLog('Status code: {}'.format(self.status), xbmc.LOGERROR)
+                        continue
+                    elif 30101 <= response['code'] <= 30103:
+                        notifyLog('Status code: {}'.format(response['code']), xbmc.LOGERROR)
+                        continue
+                    else:
+                        response.update({'icontype': filelist.index(file)})
+                        return response
+                except FileNotFoundError as e:
+                    notifyLog(str(e), xbmc.LOGERROR)
                     continue
-                elif 30101 <= response['code'] <= 30103:
-                    notifyLog(response['code'])
-                    continue
-                else:
-                    response.update({'icontype': filelist.index(file)})
-                    return response
         return None
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):
