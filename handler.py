@@ -193,10 +193,10 @@ class cRequestConnector(object):
                 req_f.raise_for_status()
                 response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
                 if response is None:
-                    notifyLog(self.status, xbmc.LOGERROR)
+                    notifyLog('Status code: {}'.format(self.status), xbmc.LOGERROR)
                     continue
                 elif 30101 <= response['code'] <= 30103:
-                    notifyLog(response['code'])
+                    notifyLog('Status code: {}'.format(response['code']), xbmc.LOGERROR)
                     continue
                 else:
                     response.update({'icontype': filelist.index(file)})
