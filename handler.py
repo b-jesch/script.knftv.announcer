@@ -8,7 +8,7 @@ import xbmcvfs
 import json
 import requests
 import os
-from urllib.parse import unquote, unquote_plus, urlsplit
+from urllib.parse import unquote, unquote_plus, urlsplit, quote
 
 addon = xbmcaddon.Addon()
 addonid = xbmcaddon.Addon().getAddonInfo('id')
@@ -186,7 +186,7 @@ class cRequestConnector(object):
             if file == '': continue
 
             image = file.split('@', 1)
-            src = unquote(image[1]) if len(image) > 1 else image[0]
+            src = unquote(image[1]) if len(image) > 1 else image[0].encode('utf-8')
             notifyLog('Transmit {} to {}'.format(src, self.server))
             try:
                 req_f = requests.get(src, stream=True)

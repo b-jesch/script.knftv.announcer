@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,15 +39,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -112,12 +113,12 @@
       <workItem from="1646298556711" duration="3135000" />
       <workItem from="1646654102410" duration="16000" />
       <workItem from="1652181761046" duration="1267000" />
-      <workItem from="1652183711390" duration="725000" />
-      <workItem from="1652257286243" duration="43000" />
-      <workItem from="1655456768099" duration="2306000" />
-      <workItem from="1655793955084" duration="13000" />
-      <workItem from="1655799481792" duration="1977000" />
-      <workItem from="1656053930822" duration="4711000" />
+      <workItem from="1656227477113" duration="2258000" />
+      <workItem from="1656338250940" duration="480000" />
+      <workItem from="1656514873885" duration="25000" />
+      <workItem from="1656575510062" duration="970000" />
+      <workItem from="1656663957169" duration="34000" />
+      <workItem from="1657785813073" duration="2377000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -252,28 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633953433589</updated>
     </task>
-    <task id="LOCAL-00020" summary="parse and unquote image url">
-      <created>1652183813870</created>
+    <task id="LOCAL-00020" summary="Version corrected">
+      <created>1656429566593</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1652183813870</updated>
+      <updated>1656429566593</updated>
     </task>
-    <task id="LOCAL-00021" summary="Bugfix">
-      <created>1655463551726</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1655463551726</updated>
-    </task>
-    <task id="LOCAL-00022" summary="improved file transfer handling">
-      <created>1656058939920</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1656058939920</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,9 +285,7 @@
     <MESSAGE value="improved log messages" />
     <MESSAGE value="Remove additional infos enclosed in parentheses in channelnames" />
     <MESSAGE value="Descriptions updated" />
-    <MESSAGE value="parse and unquote image url" />
-    <MESSAGE value="Bugfix" />
-    <MESSAGE value="improved file transfer handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved file transfer handling" />
+    <MESSAGE value="Version corrected" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version corrected" />
   </component>
 </project>
