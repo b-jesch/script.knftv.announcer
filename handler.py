@@ -36,7 +36,7 @@ LI = xbmcgui.ListItem()
 
 def regionTimeFormat():
     # Kodi bug: returns '%H%H' or '%I%I' sometimes
-    return xbmc.getRegion('time').replace('%H%H', '%H').replace('%I%I', '%I').replace(':%S', '')
+    return xbmc.getRegion('time').replace('%H%H', '%H').replace('%I%I', '%I').replace('%S%S', '%S').replace(':%S', '')
 
 
 def regionDateFormat():

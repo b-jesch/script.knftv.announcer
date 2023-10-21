@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +27,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -41,17 +43,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/jesch/.kodi/addons/script.knftv.announcer",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jesch/.kodi/addons/script.knftv.announcer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -125,7 +127,8 @@
       <workItem from="1657785813073" duration="3034000" />
       <workItem from="1691663616684" duration="827000" />
       <workItem from="1691856748142" duration="9000" />
-      <workItem from="1695466809484" duration="838000" />
+      <workItem from="1695466809484" duration="1460000" />
+      <workItem from="1697884256178" duration="4044000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -274,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1657788204971</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add items to PVR search context menu">
+      <option name="closed" value="true" />
+      <created>1695468059914</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1695468059914</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +312,7 @@
     <MESSAGE value="Descriptions updated" />
     <MESSAGE value="Version corrected" />
     <MESSAGE value="Bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+    <MESSAGE value="Add items to PVR search context menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add items to PVR search context menu" />
   </component>
 </project>
