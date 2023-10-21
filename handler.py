@@ -34,18 +34,16 @@ OSD = xbmcgui.Dialog()
 LI = xbmcgui.ListItem()
 
 
-def regionTimeFormat():
-    # Kodi bug: returns '%H%H' or '%I%I' sometimes
-    return xbmc.getRegion('time').replace('%H%H', '%H').replace('%I%I', '%I').replace('%S%S', '%S').replace(':%S', '')
+def regionTimeFormat(seconds=False):
+    if not seconds: return xbmc.getRegion('time').replace(':%S', '')
+    return xbmc.getRegion('time')
 
 
-def regionDateFormat():
-
-    return '{} {}'.format(xbmc.getRegion('dateshort'), regionTimeFormat())
+def regionDateFormat(seconds=False):
+    return '{} {}'.format(xbmc.getRegion('dateshort'), regionTimeFormat(seconds))
 
 
 def date2timeStamp(date, dFormat=JSON_DATETIME_FORMAT_SHORT, utc=False):
-
     try:
         dtt = time.strptime(date, dFormat)
     except ValueError:
@@ -60,10 +58,16 @@ def date2timeStamp(date, dFormat=JSON_DATETIME_FORMAT_SHORT, utc=False):
 
 def date2JTF(date, timeonly=False):
     if timeonly:
-        dtt = time.strptime(date, regionTimeFormat())
+        try:
+            dtt = time.strptime(date, regionTimeFormat())
+        except ValueError:
+            dtt = time.strptime(date, regionTimeFormat(seconds=True))
         return time.strftime(JSON_TIME_FORMAT_SHORT, dtt)
     else:
-        dtt = time.strptime(date, regionDateFormat())
+        try:
+            dtt = time.strptime(date, regionDateFormat())
+        except ValueError:
+            dtt = time.strptime(date, regionDateFormat(seconds=True))
         return time.strftime(JSON_DATETIME_FORMAT_SHORT, dtt)
 
 
