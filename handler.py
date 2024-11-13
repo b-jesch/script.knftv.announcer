@@ -190,40 +190,39 @@ class cRequestConnector(object):
             if file == '': continue
 
             image = file.split('@', 1)
-            src = unquote(image[1]) if len(image) > 1 else image[0].encode('utf-8')
+            src = unquote(image[1]) if len(image) > 1 else image[0]
+            with xbmcvfs.File(src, 'rb') as f: vfs_src = f.readBytes()
             notifyLog('Transmit {} to {}'.format(src, self.server))
             try:
-                req_f = requests.get(src, stream=True)
+                req_f = requests.get(vfs_src, stream=True)
                 req_f.raise_for_status()
                 response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': req_f.raw})
-                if response is None:
-                    notifyLog('Status code: {}'.format(self.status), xbmc.LOGERROR)
-                    continue
-                elif 30101 <= response['code'] <= 30103:
-                    notifyLog('Status code: {}'.format(response['code']), xbmc.LOGERROR)
-                    continue
-                else:
-                    response.update({'icontype': filelist.index(file)})
-                    return response
+                if self.handleRequest(response, filelist.index(file)): return response
+
             except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError, FileNotFoundError) as e:
                 notifyLog(str(e), xbmc.LOGERROR)
-                continue
+
             except (requests.exceptions.MissingSchema, requests.exceptions.InvalidSchema):
                 try:
-                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': open(src, 'rb').read()})
-                    if response is None:
-                        notifyLog('Status code: {}'.format(self.status), xbmc.LOGERROR)
-                        continue
-                    elif 30101 <= response['code'] <= 30103:
-                        notifyLog('Status code: {}'.format(response['code']), xbmc.LOGERROR)
-                        continue
-                    else:
-                        response.update({'icontype': filelist.index(file)})
-                        return response
-                except FileNotFoundError as e:
+                    response = self.sendRequest(url=self.server + UPLOAD_PATH, files={'icon': vfs_src})
+                    if self.handleRequest(response, filelist.index(file)): return response
+
+                except (FileNotFoundError, OSError) as e:
                     notifyLog(str(e), xbmc.LOGERROR)
-                    continue
+            continue
+
         return None
+
+    def handleRequest(self, response, files):
+        if response is None:
+            notifyLog('Status code: {}'.format(self.status), xbmc.LOGERROR)
+            return False
+        elif 30101 <= response['code'] <= 30103:
+            notifyLog('Status code: {}'.format(response['code']), xbmc.LOGERROR)
+            return False
+        else:
+            response.update({'icontype': files})
+            return response
 
     def sendRequest(self, url=None, js=None, headers=None, files=None):
 
