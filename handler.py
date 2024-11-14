@@ -8,7 +8,7 @@ import xbmcvfs
 import json
 import requests
 import os
-from urllib.parse import unquote, unquote_plus, urlsplit, quote
+from urllib.parse import unquote, unquote_plus, urlsplit
 
 addon = xbmcaddon.Addon()
 addonid = xbmcaddon.Addon().getAddonInfo('id')
@@ -250,5 +250,3 @@ class cRequestConnector(object):
             self.status = 30143
 
         return None
-
-
