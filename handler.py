@@ -25,13 +25,16 @@ TIMEDELAY = 3600    # min timediff for future broadcasts
 JSON_DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 JSON_DATETIME_FORMAT_SHORT = '%Y-%m-%d %H:%M'
 JSON_TIME_FORMAT_SHORT = '%H:%M'
-UTC_OFFSET = -time.timezone
 
 MAIN_PATH = 'index.php'
 UPLOAD_PATH = 'upload.php'
 
 OSD = xbmcgui.Dialog()
 LI = xbmcgui.ListItem()
+
+def getUtcOffset():
+    dst = time.daylight and time.localtime().tm_isdst
+    return -time.altzone if dst else -time.timezone
 
 
 def regionTimeFormat(seconds=False):
@@ -53,7 +56,7 @@ def date2timeStamp(date, dFormat=JSON_DATETIME_FORMAT_SHORT, utc=False):
             dtt = 0
     finally:
         if not utc: return int(time.mktime(dtt))
-        return int(time.mktime(dtt)) + UTC_OFFSET
+        return int(time.mktime(dtt)) + getUtcOffset()
 
 
 def date2JTF(date, timeonly=False):
@@ -145,7 +148,7 @@ class cPvrConnector(object):
                     if broadcast['title'] == title:
                         starttime = round(date2timeStamp(broadcast['starttime'], dFormat=JSON_DATETIME_FORMAT, utc=True) / 60.0) * 60
                         if starttime != utime:
-                            self.broadcasts.append(time.strftime(JSON_DATETIME_FORMAT_SHORT, time.gmtime(starttime + UTC_OFFSET)))
+                            self.broadcasts.append(time.strftime(JSON_DATETIME_FORMAT_SHORT, time.gmtime(starttime + getUtcOffset())))
 
 
 class cRequestConnector(object):
