@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="15786641-6b35-4012-aff0-a5952206fb17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/addevent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/b-jesch/script.knftv.announcer.git&quot;,
-    &quot;accountId&quot;: &quot;fed05fb8-0f26-41e7-8c69-480a1e5b2cf3&quot;
+    &quot;accountId&quot;: &quot;c2242d6e-0d67-470b-acc3-09ddf78f8d45&quot;
   }
 }</component>
   <component name="JupyterTrust" id="1f2e4ef5-f1cd-4163-9d50-06bb84a209c0" />
@@ -56,13 +56,15 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Matrix&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jesch/.kodi/addons/script.knftv.announcer&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jesch/.kodi/addons/script.service.gto&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -81,8 +83,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
       </set>
     </attachedChunks>
   </component>
@@ -151,6 +153,12 @@
       <workItem from="1695466809484" duration="1460000" />
       <workItem from="1697884256178" duration="6829000" />
       <workItem from="1697903091664" duration="1450000" />
+      <workItem from="1731589909823" duration="15000" />
+      <workItem from="1731590463516" duration="778000" />
+      <workItem from="1750921994809" duration="11681000" />
+      <workItem from="1750941761596" duration="1979000" />
+      <workItem from="1751012923489" duration="53000" />
+      <workItem from="1751015488803" duration="1304000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1579874354009</created>
@@ -315,7 +323,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697888645194</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Media handler improved">
+      <option name="closed" value="true" />
+      <created>1731588080679</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731588080679</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Improved time calculation in consideration of DST">
+      <option name="closed" value="true" />
+      <created>1750928649147</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1750928649148</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +368,8 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Add items to PVR search context menu" />
     <MESSAGE value="Fix calculation of datetime formats on Omega (21.0)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix calculation of datetime formats on Omega (21.0)" />
+    <MESSAGE value="Media handler improved" />
+    <MESSAGE value="Improved time calculation in consideration of DST" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved time calculation in consideration of DST" />
   </component>
 </project>

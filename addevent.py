@@ -34,6 +34,19 @@ if __name__ == '__main__':
                       'rating': xbmc.getInfoLabel('ListItem.Rating'),
                       })
 
+    # get year from episodename/plot if available
+
+    year = ''
+    try:
+        year = re.search(r"[0-9]{4}", xbmc.getInfoLabel('ListItem.EpisodeName'))[0]
+    except (TypeError, IndexError):
+        try:
+            year = re.search(r"[0-9]{4}", broadcast['plot'].split('\n')[0])[0]
+        except (TypeError, IndexError):
+            pass
+    finally:
+        broadcast.update({'year': year})
+
     # check for additional events (pvr connection required)
 
     pvr = handler.cPvrConnector()
